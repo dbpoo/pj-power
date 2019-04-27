@@ -10,10 +10,11 @@
           <span class="swith-off" v-show="isShow" @click="toggleMenu"></span>
         </div>
         <div class="nav-link" v-show="isShow">
+          <router-link to="/">首页</router-link>
           <router-link to="/solutions">解决方案</router-link>
-          <router-link to="/">交易平台</router-link>
+          <!-- <router-link to="/">交易平台</router-link>
           <router-link to="/">研究院</router-link>
-          <router-link to="/">新闻动态</router-link>
+          <router-link to="/">新闻动态</router-link> -->
           <router-link to="/about">关于我们</router-link>
         </div>
       </div>
@@ -112,6 +113,10 @@ export default {
         &:last-child {
           margin-right: 0;
         }
+      }
+      a.router-link-exact-active {
+        font-weight: bold;
+        color: #29acf1;
       }
     }
   }

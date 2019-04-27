@@ -70,48 +70,17 @@
             </ul>
           </div>
           <div class="newsc-list">
-            <div class="item">
+            <div class="item" v-for="(item,index) in newList" :key="index">
               <dl>
                 <dd class="dd1">23</dd>
                 <dd class="dd2">2019-04</dd>
               </dl>
               <ul>
                 <li class="li1">
-                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+                  <a href="#">{{item.tit}}</a>
                 </li>
                 <li class="li2">
-                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
-                  快车道光伏龙头企业竞相迈入……
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <dl>
-                <dd class="dd1">23</dd>
-                <dd class="dd2">2019-04</dd>
-              </dl>
-              <ul>
-                <li class="li1">
-                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
-                </li>
-                <li class="li2">
-                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
-                  快车道光伏龙头企业竞相迈入……
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <dl>
-                <dd class="dd1">23</dd>
-                <dd class="dd2">2019-04</dd>
-              </dl>
-              <ul>
-                <li class="li1">
-                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
-                </li>
-                <li class="li2">
-                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
-                  快车道光伏龙头企业竞相迈入……
+                  {{item.con}}
                 </li>
               </ul>
             </div>
@@ -153,6 +122,29 @@ export default {
   data() {
     return {
       lightArr: [100, 60, 150, 75, 120],
+      newList: [
+        {
+          key: 1,
+          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          con:
+            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
+          time: "2019-04-03"
+        },
+        {
+          k:2,
+          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          con:
+            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
+          time: "2019-04-03"
+        },
+        {
+          key: 3,
+          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          con:
+            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
+          time: "2019-04-03"
+        }
+      ],
       cardList: [
         {
           img: require("../assets/card_1.jpg"),

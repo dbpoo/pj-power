@@ -15,18 +15,21 @@ export default new Router({
     {
       path: "/detail",
       name: "detail",
-      component: () => import(/* webpackChunkName: "detail" */ "./views/Detail.vue")
+      component: () =>
+        import(/* webpackChunkName: "detail" */ "./views/Detail.vue")
     },
     {
       path: "/solutions",
       name: " ",
-      component: () => import(/* webpackChunkName: "about" */ "./views/Solutions.vue")
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Solutions.vue")
     },
     {
       path: "/about",
       name: "about",
-      component: () => import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/About.vue")
     }
   ],
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({ y: 0 })
 });
