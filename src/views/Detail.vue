@@ -37,6 +37,7 @@ export default {};
   min-width: 1200px;
   .banner {
     height: 396px;
+    padding-top: 77px;
     background: url("../assets/cbanner.jpg") center 0 no-repeat;
     display: flex;
     justify-content: center;

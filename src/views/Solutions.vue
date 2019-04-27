@@ -59,6 +59,7 @@ export default {};
     min-width: 100%;
     .banner {
       height: 300px;
+      padding-top: 77px;
       background-size: cover;
       h2 {
         font-size: 30px;
