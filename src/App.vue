@@ -30,13 +30,13 @@
         <ul class="ul2">
           <li class="li1">友情链接</li>
           <li class="li2">
-            <a href="#" target="_blank">中数能研究院</a>
+            <a href="javascript:;">中数能研究院</a>
           </li>
           <li class="li2">
-            <a href="#" target="_blank">清华X-lab</a>
+            <a href="javascript:;">清华X-lab</a>
           </li>
           <li class="li2">
-            <a href="#" target="_blank">哈希未来</a>
+            <a href="javascript:;">哈希未来</a>
           </li>
         </ul>
         <ul class="ul3">

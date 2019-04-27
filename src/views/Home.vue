@@ -54,30 +54,30 @@
       <div class="news">
         <div class="news-t">
           <span>新闻资讯</span>
-          <a href="#">更多新闻》</a>
+          <!-- <a href="#">更多新闻》</a> -->
         </div>
         <div class="news-c">
           <div class="newsc-img">
             <ul>
               <li>
-                <a href="#">
+                <a href="javascript:;" @click="toDetail(newList[0])">
                   <img src="../assets/img_1.jpg" alt>
                 </a>
               </li>
               <li>
-                <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+                <a href="javascript:;" @click="toDetail(newList[0])">光伏龙头企业竞相迈入组件4.0快车道</a>
               </li>
             </ul>
           </div>
           <div class="newsc-list">
             <div class="item" v-for="(item,index) in newList" :key="index">
               <dl>
-                <dd class="dd1">23</dd>
-                <dd class="dd2">2019-04</dd>
+                <dd class="dd1">{{getD(item.time)}}</dd>
+                <dd class="dd2">{{getYM(item.time)}}</dd>
               </dl>
               <ul>
                 <li class="li1">
-                  <a @click="toDetail(item)">{{item.tit}}</a>
+                  <a href="javascript:;" @click="toDetail(item)">{{item.tit}}</a>
                 </li>
                 <li class="li2">
                   {{item.con}}
@@ -90,7 +90,7 @@
       <div class="event">
         <div class="event-t">
           <span>活动信息</span>
-          <a href="#">更多信息》</a>
+          <!-- <a href="#">更多信息》</a> -->
         </div>
         <div class="event-c">
           <swiper :options="swiperEventOption" ref="eventSwiper">
@@ -128,21 +128,21 @@ export default {
           tit: "光伏龙头企业竞相迈入组件4.0快车道",
           con:
             "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
-          time: "2019-04-03"
+          time: "2019-04-22"
         },
         {
           id:2,
-          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          tit: "多省已启动光伏平价上网项目申报 首批项目有望年内落地",
           con:
-            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
-          time: "2019-04-03"
+            "国家能源局在上周连续发布了多项重要政策。4月10日，国家能源局发布《关于推进风电、光伏发电……",
+          time: "2019-04-23"
         },
         {
           id: 3,
-          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          tit: "国家能源局下达十三五第二批光伏扶贫项目 总装机规模达167万千瓦",
           con:
-            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
-          time: "2019-04-03"
+            "4月19日，国家能源局网站发布《国家能源局 国务院扶贫办关于下达“十三五”第二批光伏扶贫项目计……",
+          time: "2019-04-27"
         }
       ],
       cardList: [
@@ -244,6 +244,14 @@ export default {
     swiperSlide
   },
   methods: {
+    getYM(time) {
+      let arr = time.split('-');
+      return arr[0] + "-" + arr[1]
+    },
+    getD(time) {
+      let arr = time.split('-');
+      return arr[2]
+    },
     toDetail(item) {
       this.$router.push({
         path: 'detail',
