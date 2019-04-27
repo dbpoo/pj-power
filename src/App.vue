@@ -85,6 +85,7 @@
 }
 .flink {
   height: 168px;
+  margin-top: 77px;
   padding-top: 35px;
   background-color: #3a3434;
   .flink-flex {
