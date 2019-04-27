@@ -3,8 +3,8 @@
     <div class="banner-swiper">
       <swiper :options="swiperOption" ref="bannerSwiper">
         <!-- slides -->
-        <swiper-slide v-for="(slide,index) in swiperSlides" :key="index">
-          <a :href="slide.href" :style="{backgroundImage:'url('+slide.img+')'}" class="slide-img"></a>
+        <swiper-slide v-for="(slide,index) in bannerSlides" :key="index">
+          <div :style="{backgroundImage:'url('+slide.img+')'}" class="slide-img"></div>
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -24,12 +24,18 @@
         <div class="point point-4"></div>
       </div>
       <div class="btn">
-        <a href="#"></a>
+        <router-link to="/solutions"></router-link>
       </div>
     </div>
     <div class="col-2">
       <div class="tit"></div>
-      <div class="con"></div>
+      <div class="con">
+        <div class="light light-100"></div>
+        <div class="light light-60"></div>
+        <div class="light light-150"></div>
+        <div class="light light-75"></div>
+        <div class="light light-120"></div>
+      </div>
     </div>
     <div class="col-3">
       <div class="tit"></div>
@@ -64,14 +70,14 @@
           <div class="newsc-list">
             <div class="item">
               <dl>
-                <dd>23</dd>
-                <dd>2019-04</dd>
+                <dd class="dd1">23</dd>
+                <dd class="dd2">2019-04</dd>
               </dl>
               <ul>
-                <li>
+                <li class="li1">
                   <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
                 </li>
-                <li>
+                <li class="li2">
                   光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
                   快车道光伏龙头企业竞相迈入……
                 </li>
@@ -79,14 +85,14 @@
             </div>
             <div class="item">
               <dl>
-                <dd>23</dd>
-                <dd>2019-04</dd>
+                <dd class="dd1">23</dd>
+                <dd class="dd2">2019-04</dd>
               </dl>
               <ul>
-                <li>
+                <li class="li1">
                   <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
                 </li>
-                <li>
+                <li class="li2">
                   光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
                   快车道光伏龙头企业竞相迈入……
                 </li>
@@ -94,14 +100,14 @@
             </div>
             <div class="item">
               <dl>
-                <dd>23</dd>
-                <dd>2019-04</dd>
+                <dd class="dd1">23</dd>
+                <dd class="dd2">2019-04</dd>
               </dl>
               <ul>
-                <li>
+                <li class="li1">
                   <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
                 </li>
-                <li>
+                <li class="li2">
                   光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
                   快车道光伏龙头企业竞相迈入……
                 </li>
@@ -115,7 +121,22 @@
           <span>活动信息</span>
           <a href="#">更多信息》</a>
         </div>
-        <div class="event-c"></div>
+        <div class="event-c">
+          <swiper :options="swiperEventOption" ref="eventSwiper">
+            <!-- slides -->
+            <swiper-slide v-for="(slide,index) in eventSlides" :key="index">
+              <ul>
+                <li class="li1">
+                  <img :src="slide.img" alt>
+                </li>
+                <li class="li2">{{slide.txt}}</li>
+              </ul>
+            </swiper-slide>
+            <!-- Optional controls -->
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+        </div>
       </div>
     </div>
   </div>
@@ -155,7 +176,34 @@ export default {
           href: "/"
         }
       ],
-      swiperSlides: [
+      eventSlides: [
+        {
+          img: require("../assets/eventimg.jpg"),
+          href: "/",
+          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+        },
+        {
+          img: require("../assets/eventimg.jpg"),
+          href: "/",
+          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+        },
+        {
+          img: require("../assets/eventimg.jpg"),
+          href: "/",
+          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+        },
+        {
+          img: require("../assets/eventimg.jpg"),
+          href: "/",
+          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+        },
+        {
+          img: require("../assets/eventimg.jpg"),
+          href: "/",
+          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+        }
+      ],
+      bannerSlides: [
         {
           img: require("../assets/banner_1.jpg"),
           href: "/"
@@ -175,6 +223,24 @@ export default {
         pagination: {
           el: ".swiper-pagination"
         }
+      },
+      swiperEventOption: {
+        loop: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
       }
     };
   },
@@ -192,7 +258,7 @@ export default {
   .banner-swiper {
     height: 900px;
     position: relative;
-    a {
+    .slide-img {
       width: 100%;
       height: 900px;
       display: block;
@@ -277,7 +343,43 @@ export default {
   .col-2 {
     width: 100%;
     height: 956px;
+    padding-top: 60px;
     background: url("../assets/ibg_2.jpg") center 0 no-repeat;
+    .tit {
+      height: 80px;
+      background: url("../assets/tit_2.png") center 0 no-repeat;
+    }
+    .con {
+      width: 1200px;
+      position: relative;
+      .light {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        background: url("../assets/light.png") 0 0 no-repeat;
+        animation: pulse 1s infinite;
+      }
+      .light-100 {
+        top: 88px;
+        left: 1000px;
+      }
+      .light-60 {
+        top: 184px;
+        left: 760px;
+      }
+      .light-150 {
+        top: 408px;
+        left: 632px;
+      }
+      .light-75 {
+        top: 532px;
+        left: 600px;
+      }
+      .light-120 {
+        top: 576px;
+        left: 506px;
+      }
+    }
   }
   .col-3 {
     width: 100%;
@@ -320,26 +422,130 @@ export default {
       width: 1200px;
       margin: 0 auto 50px auto;
       .news-t {
-        height: 32px;
-        line-height: 32px;
+        height: 40px;
+        line-height: 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 22px;
         border-bottom: 1px solid #8d8d8d;
       }
+      .news-c {
+        padding-top: 55px;
+        display: flex;
+        justify-content: space-between;
+        .newsc-img {
+          width: 474px;
+          ul {
+            li {
+              text-align: center;
+              img {
+                width: 474px;
+                height: 291px;
+              }
+              a {
+                color: #484848;
+                &:hover {
+                  color: #29acf1;
+                }
+              }
+            }
+          }
+        }
+        .newsc-list {
+          width: 665px;
+          .item {
+            display: flex;
+            justify-content: space-between;
+            dl {
+              width: 83px;
+              text-align: center;
+              dd.dd1 {
+                color: #29acf1;
+                font-size: 64px;
+                line-height: 1;
+              }
+              dd.dd2 {
+                color: #29acf1;
+                font-size: 18px;
+              }
+            }
+            ul {
+              width: 566px;
+              font-size: 20px;
+              margin-bottom: 25px;
+              li.li1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+                a {
+                  color: #484848;
+                  &:hover {
+                    color: #29acf1;
+                  }
+                }
+              }
+              li.li2 {
+                font-size: 18px;
+                color: #878787;
+              }
+            }
+          }
+        }
+      }
     }
     .event {
       width: 1200px;
       margin: 0 auto;
       .event-t {
-        height: 32px;
-        line-height: 32px;
+        height: 40px;
+        line-height: 40px;
         display: flex;
         font-size: 22px;
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #8d8d8d;
+      }
+      .event-c {
+        padding-top: 80px;
+        .swiper-slide {
+          width: 594px;
+          ul {
+            li.li1 {
+              width: 100%;
+            }
+            li.li2 {
+              display: none;
+            }
+          }
+        }
+        .swiper-slide-prev,
+        .swiper-slide-next {
+          width: 594px;
+          height: 338px;
+          overflow: hidden;
+        }
+        .swiper-slide-active {
+          ul {
+            li.li2 {
+              display: block;
+              text-align: center;
+            }
+          }
+        }
+        .swiper-container-3d .swiper-slide-shadow-left {
+          background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0)
+          );
+        }
+        .swiper-container-3d .swiper-slide-shadow-right {
+          background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0)
+          );
+        }
       }
     }
   }
