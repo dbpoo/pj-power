@@ -5,7 +5,11 @@
         <div class="nav-logo">
           <router-link to="/">logo</router-link>
         </div>
-        <div class="nav-link">
+        <div class="nav-swith">
+          <span class="swith-on" v-show="!isShow" @click="toggleMenu"></span>
+          <span class="swith-off" v-show="isShow" @click="toggleMenu"></span>
+        </div>
+        <div class="nav-link" v-show="isShow">
           <router-link to="/solutions">解决方案</router-link>
           <router-link to="/">交易平台</router-link>
           <router-link to="/">研究院</router-link>
@@ -42,6 +46,35 @@
     <div class="copyright"></div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isShow: true,
+      screenWidth: document.body.clientWidth // 屏幕尺寸
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isShow = !this.isShow;
+    }
+  },
+  watch: {
+    $route(to, from) {
+      if (this.screenWidth < 768) {
+        this.isShow = false;
+      }
+    }
+  },
+  mounted() {
+    if (this.screenWidth < 768) {
+      this.isShow = false;
+    }
+  }
+};
+</script>
+
 
 <style lang="less">
 @import "css/reset";
@@ -133,5 +166,66 @@
   height: 78px;
   background: #3a3434 url("./assets/copyright.png") center center no-repeat;
   border-top: 1px solid #777777;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    .nav-flex {
+      width: 100%;
+      .nav-logo {
+        margin-left: 10px;
+      }
+      .nav-link {
+        width: 100%;
+        position: fixed;
+        flex-wrap: wrap;
+        top: 77px;
+        background-color: #727272;
+        height: calc(100% - 77px);
+        a {
+          width: 100%;
+          height: 54px;
+          line-height: 54px;
+          display: block;
+          margin: 0;
+          padding: 0 20px;
+          color: #e6e6e6;
+          font-weight: normal;
+          border-bottom: 1px solid #bfbfbf;
+        }
+      }
+      .nav-swith {
+        width: 77px;
+        height: 77px;
+        .swith-on {
+          width: 77px;
+          height: 77px;
+          display: block;
+          background: url("./assets/switch.png") center center no-repeat;
+        }
+        .swith-off {
+          width: 77px;
+          height: 77px;
+          display: block;
+          background: url("./assets/close.png") center center no-repeat;
+        }
+      }
+    }
+  }
+  .flink {
+    height: auto;
+    padding-top: 15px;
+    .flink-flex {
+      width: 100%;
+      flex-wrap: wrap;
+      ul {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  }
+  .copyright {
+    background-size: contain;
+  }
 }
 </style>

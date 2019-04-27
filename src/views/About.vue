@@ -44,4 +44,28 @@ export default {};
     background: url("../assets/about_3.jpg") center 0 no-repeat;
   }
 }
+@media screen and (max-width: 768px ) {
+  .about{
+    min-width: 100%;
+    .banner{
+      height: 300px;
+      background-size: cover;
+      h2 {
+        font-size: 30px;
+      }
+    }
+    .about-1 {
+      height: 250px;
+      background-size: cover;
+    }
+    .about-2 {
+      height: 200px;
+      background-size: cover;
+    }
+    .about-3 {
+      height: 200px;
+      background-size: cover;
+    }
+  }
+}
 </style>

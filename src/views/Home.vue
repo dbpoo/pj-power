@@ -30,16 +30,13 @@
     <div class="col-2">
       <div class="tit"></div>
       <div class="con">
-        <div class="light light-100"></div>
-        <div class="light light-60"></div>
-        <div class="light light-150"></div>
-        <div class="light light-75"></div>
-        <div class="light light-120"></div>
-        <a class="light-hover light-hover-100"><span></span></a>
-        <a class="light-hover light-hover-60"><span></span></a>
-        <a class="light-hover light-hover-150"><span></span></a>
-        <a class="light-hover light-hover-75"><span></span></a>
-        <a class="light-hover light-hover-120"><span></span></a>
+        <a class="light" :class="'light-'+item" v-for="(item,index) in lightArr" :key="index">
+          <span class="sp1"></span>
+          <span class="sp2"></span>
+        </a>
+      </div>
+      <div class="con-mobile">
+        <span class="light" :class="'light-'+item" v-for="(item,index) in lightArr" :key="index"></span>
       </div>
     </div>
     <div class="col-3">
@@ -155,6 +152,7 @@ export default {
   name: "home",
   data() {
     return {
+      lightArr: [100, 60, 150, 75, 120],
       cardList: [
         {
           img: require("../assets/card_1.jpg"),
@@ -252,7 +250,8 @@ export default {
   components: {
     swiper,
     swiperSlide
-  }
+  },
+  methods: {}
 };
 </script>
 
@@ -362,80 +361,58 @@ export default {
         width: 70px;
         height: 70px;
         position: absolute;
-        background: url("../assets/light.png") 0 0 no-repeat;
-        animation: pulse 1s infinite;
-        z-index: 0;
+        cursor: pointer;
+        span.sp1 {
+          width: 75px;
+          height: 75px;
+          display: block;
+          background: url("../assets/light.png") 0 0 no-repeat;
+          animation: pulse 1s infinite;
+        }
       }
       .light-100 {
         top: 88px;
         left: 1000px;
-      }
-      .light-60 {
-        top: 184px;
-        left: 760px;
-      }
-      .light-150 {
-        top: 408px;
-        left: 632px;
-      }
-      .light-75 {
-        top: 532px;
-        left: 600px;
-      }
-      .light-120 {
-        top: 576px;
-        left: 506px;
-      }
-      .light-hover {
-        width: 70px;
-        height: 70px;
-        display: block;
-        position: absolute;
-        z-index: 999;
-        cursor: pointer;
-      }
-      .light-hover-100 {
-        top: 88px;
-        left: 1000px;
-        span {
+        span.sp2 {
           width: 440px;
           height: 257px;
           display: none;
           position: absolute;
           right: 50px;
           top: -50px;
+          z-index: 99;
           background: url("../assets/map_100.png") 0 0 no-repeat;
         }
         &:hover {
-          animation: zoomIn .5s;
-          span {
+          span.sp2 {
+            animation: zoomIn 0.2s;
             display: block;
           }
         }
       }
-      .light-hover-60 {
+      .light-60 {
         top: 184px;
         left: 760px;
-        span {
+        span.sp2 {
           width: 349px;
           height: 251px;
           display: none;
           position: absolute;
-          right: 60px;
-          top: -60px;
+          right: 50px;
+          top: -50px;
           background: url("../assets/map_60.png") 0 0 no-repeat;
         }
         &:hover {
-          animation: zoomIn .5s;
-          span {
+          span.sp2 {
+            animation: zoomIn 0.2s;
             display: block;
           }
         }
       }
-      .light-hover-150 {
+      .light-150 {
         top: 408px;
         left: 632px;
-        span {
+        span.sp2 {
           width: 444px;
           height: 266px;
           display: none;
@@ -445,49 +422,85 @@ export default {
           background: url("../assets/map_150.png") 0 0 no-repeat;
         }
         &:hover {
-          animation: zoomIn .5s;
-          span {
+          span.sp2 {
+            animation: zoomIn 0.2s;
             display: block;
           }
         }
       }
-      .light-hover-75 {
+      .light-75 {
         top: 532px;
         left: 600px;
-        span {
+        span.sp2 {
           width: 438px;
           height: 269px;
           display: none;
           position: absolute;
-          left: 60px;
+          left: 50px;
           bottom: 50px;
           background: url("../assets/map_75.png") 0 0 no-repeat;
         }
         &:hover {
-          animation: zoomIn .5s;
-          span {
+          span.sp2 {
+            animation: zoomIn 0.2s;
             display: block;
           }
         }
       }
-      .light-hover-120 {
+      .light-120 {
         top: 576px;
         left: 506px;
-        span {
+        span.sp2 {
           width: 448px;
           height: 266px;
           display: none;
           position: absolute;
-          right: 60px;
-          bottom: 60px;
+          right: 50px;
+          bottom: 50px;
           background: url("../assets/map_120.png") 0 0 no-repeat;
         }
         &:hover {
-          animation: zoomIn .5s;
-          span {
+          span.sp2 {
+            animation: zoomIn 0.2s;
             display: block;
           }
         }
+      }
+    }
+    .con-mobile {
+      display: none;
+      .light {
+        display: block;
+      }
+      .light-100 {
+        width: 100%;
+        height: 257px;
+        background: url("../assets/map_100.png") 0 0 no-repeat;
+        background-size: contain;
+      }
+      .light-60 {
+        width: 100%;
+        height: 340px;
+        background: url("../assets/map_60.png") 0 0 no-repeat;
+        background-size: contain;
+      }
+      .light-150 {
+        width: 100%;
+        height: 266px;
+        background: url("../assets/map_150.png") 0 0 no-repeat;
+        background-size: contain;
+      }
+      .light-75 {
+        width: 100%;
+        height: 269px;
+        background: url("../assets/map_75.png") 0 0 no-repeat;
+        background-size: contain;
+      }
+      .light-120 {
+        width: 100%;
+        height: 300px;
+        background: url("../assets/map_120.png") 0 0 no-repeat;
+        background-size: contain;
       }
     }
   }
@@ -655,6 +668,117 @@ export default {
             rgba(255, 255, 255, 0.8),
             rgba(255, 255, 255, 0)
           );
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    min-width: 100%;
+    .banner-swiper {
+      height: auto;
+      .slide-img {
+        height: 400px;
+        background-size: cover;
+      }
+      .banner-btn {
+        width: 100%;
+        padding: 0 20px;
+        left: 0;
+        bottom: 50px;
+        margin-left: 0;
+        a {
+          width: 120px;
+          height: 86px;
+        }
+        a.btn-1 {
+          background-size: contain;
+        }
+        a.btn-2 {
+          background-size: contain;
+        }
+        a.btn-3 {
+          background-size: contain;
+        }
+      }
+    }
+    .col-1 {
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .con {
+        width: 90%;
+        height: 150px;
+        margin: 0 auto;
+        background-size: contain;
+        .point {
+          display: none;
+        }
+      }
+    }
+    .col-2 {
+      height: auto;
+      background: #04142c;
+      .con {
+        display: none;
+      }
+      .con-mobile {
+        display: block;
+      }
+    }
+    .col-3 {
+      height: auto;
+      padding-top: 30px;
+      .con {
+        width: 100%;
+        ul {
+          justify-content: center;
+          li {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+    .col-4 {
+      height: auto;
+      padding-top: 30px;
+      .news {
+        width: 100%;
+        padding: 0 15px;
+        margin-bottom: 15px;
+        .news-c {
+          padding-top: 30px;
+          flex-wrap: wrap;
+          .newsc-img {
+            width: 100%;
+            margin-bottom: 30px;
+            ul {
+              li {
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .newsc-list {
+            width: 100%;
+            .item {
+              dl {
+                width: 200px;
+                padding-right: 20px;
+                flex: 1 1 auto;
+              }
+            }
+          }
+        }
+      }
+      .event {
+        width: 100%;
+        padding: 0 15px;
+        .event-c {
+          padding: 30px 0;
         }
       }
     }
