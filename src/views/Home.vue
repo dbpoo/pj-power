@@ -77,7 +77,7 @@
               </dl>
               <ul>
                 <li class="li1">
-                  <a href="#">{{item.tit}}</a>
+                  <a @click="toDetail(item)">{{item.tit}}</a>
                 </li>
                 <li class="li2">
                   {{item.con}}
@@ -124,21 +124,21 @@ export default {
       lightArr: [100, 60, 150, 75, 120],
       newList: [
         {
-          key: 1,
+          id: 1,
           tit: "光伏龙头企业竞相迈入组件4.0快车道",
           con:
             "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
           time: "2019-04-03"
         },
         {
-          k:2,
+          id:2,
           tit: "光伏龙头企业竞相迈入组件4.0快车道",
           con:
             "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
           time: "2019-04-03"
         },
         {
-          key: 3,
+          id: 3,
           tit: "光伏龙头企业竞相迈入组件4.0快车道",
           con:
             "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
@@ -243,7 +243,16 @@ export default {
     swiper,
     swiperSlide
   },
-  methods: {}
+  methods: {
+    toDetail(item) {
+      this.$router.push({
+        path: 'detail',
+        query: {
+          id: item.id
+        }
+      })
+    }
+  }
 };
 </script>
 
