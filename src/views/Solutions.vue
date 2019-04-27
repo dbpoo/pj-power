@@ -3,12 +3,35 @@
     <div class="banner">
       <h2>新能源资产上链、发行、清结算系统解决方案提供商</h2>
     </div>
-    <div class="solutions-container">
-      <div class="solutions-1"></div>
-      <div class="solutions-2"></div>
-      <div class="solutions-3"></div>
-      <div class="solutions-4"></div>
-      <div class="solutions-5"></div>
+    <div class="solutions-1">
+      <div class="solution-flex">
+        <img src="../assets/solutions_1.jpg" alt class="sotxt">
+        <img src="../assets/solutions_1s.jpg" alt class="sohover">
+      </div>
+    </div>
+    <div class="solutions-2">
+      <div class="solution-flex">
+        <img src="../assets/solutions_2s.jpg" alt class="sohover">
+        <img src="../assets/solutions_2.jpg" alt class="sotxt">
+      </div>
+    </div>
+    <div class="solutions-3">
+      <div class="solution-flex">
+        <img src="../assets/solutions_3.jpg" alt class="sotxt">
+        <img src="../assets/solutions_3s.jpg" alt class="sohover">
+      </div>
+    </div>
+    <div class="solutions-4">
+      <div class="solution-flex">
+        <img src="../assets/solutions_4s.jpg" alt class="sohover">
+        <img src="../assets/solutions_4.jpg" alt class="sotxt">
+      </div>
+    </div>
+    <div class="solutions-5">
+      <div class="solution-flex">
+        <img src="../assets/solutions_5.jpg" alt class="sotxt">
+        <img src="../assets/solutions_5s.jpg" alt class="sohover">
+      </div>
     </div>
   </div>
 </template>
@@ -33,25 +56,38 @@ export default {};
       color: #fff;
     }
   }
+  .solution-flex {
+    width: 1200px;
+    height: 436px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      img.sohover {
+        animation: zoom 0.5s forwards;
+      }
+    }
+  }
   .solutions-1 {
     height: 437px;
-    background: #fff url("../assets/solutions_1.jpg") center 0 no-repeat;
+    background-color: #fff;
   }
   .solutions-2 {
     height: 437px;
-    background: #f9f9f9 url("../assets/solutions_2.jpg") center 0 no-repeat;
+    background-color: #f9f9f9;
   }
   .solutions-3 {
     height: 437px;
-    background: #fff url("../assets/solutions_3.jpg") center 0 no-repeat;
+    background-color: #fff;
   }
   .solutions-4 {
     height: 437px;
-    background: #f9f9f9 url("../assets/solutions_4.jpg") center 0 no-repeat;
+    background-color: #f9f9f9;
   }
   .solutions-5 {
     height: 437px;
-    background: #fff url("../assets/solutions_5.jpg") center 0 no-repeat;
+    background-color: #fff;
   }
 }
 @media screen and (max-width: 768px) {
@@ -65,28 +101,31 @@ export default {};
         font-size: 30px;
       }
     }
-    .solutions-container{
-       padding: 0 30px;
+    .solution-flex {
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      img.sotxt {
+        width: 100%;
+      }
+      img.sohover {
+        display: none;
+      }
     }
     .solutions-1 {
-      height: 130px;
-      background-size: cover;
+      height: auto;
     }
     .solutions-2 {
-      height: 100px;
-      background-size: cover;
+      height: auto;
     }
     .solutions-3 {
-      height: 130px;
-      background-size: cover;
+      height: auto;
     }
     .solutions-4 {
-      height: 110px;
-      background-size: cover;
+      height: auto;
     }
     .solutions-5 {
-      height: 130px;
-      background-size: cover;
+      height: auto;
     }
   }
 }
