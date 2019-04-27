@@ -21,7 +21,7 @@
 <style lang="less">
 @import "css/reset";
 #nav {
-  height: 78px;
+  height: 77px;
   background: url("./assets/top.jpg") center 0 no-repeat;
   .nav-flex {
     width: 1200px;
@@ -42,6 +42,7 @@
       a {
         margin: 0 20px;
         color: #fff;
+        font-weight: bold;
         &:hover{
           color: #29acf1;
         }

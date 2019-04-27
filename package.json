@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "pj-power",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "loadsh": "^0.0.4",
     "vue": "^2.6.10",
+    "vue-awesome-swiper": "^3.1.3",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
