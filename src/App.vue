@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div class="nav">
       <div class="nav-flex">
         <div class="nav-logo">
           <router-link to="/">logo</router-link>
@@ -15,12 +15,37 @@
       </div>
     </div>
     <router-view/>
+    <div class="flink">
+      <div class="flink-flex">
+        <ul class="ul1">
+          <li class="li1">新能博安</li>
+          <li class="li2">北京市东城区和平里西街51号雍和宫壹中心</li>
+          <li class="li3">010-64268933</li>
+        </ul>
+        <ul class="ul2">
+          <li class="li1">友情链接</li>
+          <li class="li2">
+            <a href="#" target="_blank">中数能研究院</a>
+          </li>
+          <li class="li2">
+            <a href="#" target="_blank">清华X-lab</a>
+          </li>
+          <li class="li2">
+            <a href="#" target="_blank">哈希未来</a>
+          </li>
+        </ul>
+        <ul class="ul3">
+          <li class="li1">全媒体平台</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright"></div>
   </div>
 </template>
 
 <style lang="less">
 @import "css/reset";
-#nav {
+.nav {
   height: 77px;
   background: url("./assets/top.jpg") center 0 no-repeat;
   .nav-flex {
@@ -43,7 +68,7 @@
         margin: 0 20px;
         color: #fff;
         font-weight: bold;
-        &:hover{
+        &:hover {
           color: #29acf1;
         }
         &:last-child {
@@ -52,5 +77,56 @@
       }
     }
   }
+}
+.flink {
+  height: 168px;
+  padding-top: 35px;
+  background-color: #3a3434;
+  .flink-flex {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      li {
+        color: #fff;
+      }
+      li.li1 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    ul.ul1 {
+      li {
+        margin-bottom: 10px;
+      }
+      li.li2 {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 50px;
+        background: url("./assets/icon_address.png") 0 center no-repeat;
+      }
+      li.li3 {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 50px;
+        background: url("./assets/icon_tel.png") 0 center no-repeat;
+      }
+    }
+    ul.ul2 {
+      li.li1 {
+        margin-bottom: 10px;
+      }
+      li.li2 {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.copyright {
+  height: 78px;
+  background: #3a3434 url("./assets/copyright.png") center center no-repeat;
+  border-top: 1px solid #777777;
 }
 </style>
