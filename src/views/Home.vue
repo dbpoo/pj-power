@@ -35,6 +35,11 @@
         <div class="light light-150"></div>
         <div class="light light-75"></div>
         <div class="light light-120"></div>
+        <a class="light-hover light-hover-100"><span></span></a>
+        <a class="light-hover light-hover-60"><span></span></a>
+        <a class="light-hover light-hover-150"><span></span></a>
+        <a class="light-hover light-hover-75"><span></span></a>
+        <a class="light-hover light-hover-120"><span></span></a>
       </div>
     </div>
     <div class="col-3">
@@ -351,6 +356,7 @@ export default {
     }
     .con {
       width: 1200px;
+      margin: 0 auto;
       position: relative;
       .light {
         width: 70px;
@@ -358,6 +364,7 @@ export default {
         position: absolute;
         background: url("../assets/light.png") 0 0 no-repeat;
         animation: pulse 1s infinite;
+        z-index: 0;
       }
       .light-100 {
         top: 88px;
@@ -378,6 +385,109 @@ export default {
       .light-120 {
         top: 576px;
         left: 506px;
+      }
+      .light-hover {
+        width: 70px;
+        height: 70px;
+        display: block;
+        position: absolute;
+        z-index: 999;
+        cursor: pointer;
+      }
+      .light-hover-100 {
+        top: 88px;
+        left: 1000px;
+        span {
+          width: 440px;
+          height: 257px;
+          display: none;
+          position: absolute;
+          right: 50px;
+          top: -50px;
+          background: url("../assets/map_100.png") 0 0 no-repeat;
+        }
+        &:hover {
+          animation: zoomIn .5s;
+          span {
+            display: block;
+          }
+        }
+      }
+      .light-hover-60 {
+        top: 184px;
+        left: 760px;
+        span {
+          width: 349px;
+          height: 251px;
+          display: none;
+          position: absolute;
+          right: 60px;
+          top: -60px;
+          background: url("../assets/map_60.png") 0 0 no-repeat;
+        }
+        &:hover {
+          animation: zoomIn .5s;
+          span {
+            display: block;
+          }
+        }
+      }
+      .light-hover-150 {
+        top: 408px;
+        left: 632px;
+        span {
+          width: 444px;
+          height: 266px;
+          display: none;
+          position: absolute;
+          right: 50px;
+          bottom: 50px;
+          background: url("../assets/map_150.png") 0 0 no-repeat;
+        }
+        &:hover {
+          animation: zoomIn .5s;
+          span {
+            display: block;
+          }
+        }
+      }
+      .light-hover-75 {
+        top: 532px;
+        left: 600px;
+        span {
+          width: 438px;
+          height: 269px;
+          display: none;
+          position: absolute;
+          left: 60px;
+          bottom: 50px;
+          background: url("../assets/map_75.png") 0 0 no-repeat;
+        }
+        &:hover {
+          animation: zoomIn .5s;
+          span {
+            display: block;
+          }
+        }
+      }
+      .light-hover-120 {
+        top: 576px;
+        left: 506px;
+        span {
+          width: 448px;
+          height: 266px;
+          display: none;
+          position: absolute;
+          right: 60px;
+          bottom: 60px;
+          background: url("../assets/map_120.png") 0 0 no-repeat;
+        }
+        &:hover {
+          animation: zoomIn .5s;
+          span {
+            display: block;
+          }
+        }
       }
     }
   }
