@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 *,
 *::before,
@@ -150,6 +150,11 @@ body {
   /* autoprefixer: no */
 }
 
+body {
+  -webkit-overflow-scrolling: touch;
+  font-family: @font-family;
+}
+
 a {
   color: @link-color;
   text-decoration: @link-decoration;
@@ -161,16 +166,12 @@ a {
   }
 }
 
-body {
-  -webkit-overflow-scrolling: touch;
-}
-
 .clearfix {
   zoom: 1;
   &:after {
     display: block;
     clear: both;
-    content: '';
+    content: "";
     visibility: hidden;
     height: 0;
   }
