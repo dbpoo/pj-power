@@ -9,6 +9,11 @@
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
+      <div class="banner-btn">
+        <a href="javascript:;" class="btn-1"></a>
+        <a href="javascript:;" class="btn-2"></a>
+        <a href="javascript:;" class="btn-3"></a>
+      </div>
     </div>
     <div class="col-1"></div>
     <div class="col-2"></div>
@@ -75,6 +80,8 @@ export default {
         }
       ],
       swiperOption: {
+        autoplay: true,
+        loop: true,
         pagination: {
           el: ".swiper-pagination"
         }
@@ -89,14 +96,46 @@ export default {
 </script>
 
 <style lang="less">
+@import "../css/animate";
 .home {
+  min-width: 1200px;
   .banner-swiper {
+    height: 900px;
+    position: relative;
     a {
       width: 100%;
-      height: 822px;
+      height: 900px;
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
+    }
+    .banner-btn {
+      width: 1200px;
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      margin-left: -600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      a {
+        width: 357px;
+        height: 256px;
+        display: block;
+        &:hover{
+          animation: pulse 1s;
+        }
+      }
+      a.btn-1 {
+        background: url("../assets/bannercv_1.png") 0 0 no-repeat;
+      }
+      a.btn-2 {
+        background: url("../assets/bannercv_2.png") 0 0 no-repeat;
+      }
+      a.btn-3 {
+        background: url("../assets/bannercv_3.png") 0 0 no-repeat;
+      }
     }
   }
   .col-1 {

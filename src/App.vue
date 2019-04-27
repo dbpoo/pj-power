@@ -46,8 +46,13 @@
 <style lang="less">
 @import "css/reset";
 .nav {
+  width: 100%;
   height: 77px;
-  background: url("./assets/top.jpg") center 0 no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
   .nav-flex {
     width: 1200px;
     margin: 0 auto;
