@@ -78,6 +78,7 @@ export default {};
     }
     .news-con {
       font-size: 20px;
+      padding-bottom: 150px;
       p {
         text-indent: 2em;
         padding-bottom: 20px;
