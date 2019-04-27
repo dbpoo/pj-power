@@ -10,24 +10,114 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
       <div class="banner-btn">
-        <a href="javascript:;" class="btn-1"></a>
-        <a href="javascript:;" class="btn-2"></a>
-        <a href="javascript:;" class="btn-3"></a>
+        <a href="javascript:;" class="btn-1 hvr-grow"></a>
+        <a href="javascript:;" class="btn-2 hvr-grow"></a>
+        <a href="javascript:;" class="btn-3 hvr-grow"></a>
       </div>
     </div>
-    <div class="col-1"></div>
-    <div class="col-2"></div>
+    <div class="col-1">
+      <div class="tit"></div>
+      <div class="con">
+        <div class="point point-1"></div>
+        <div class="point point-2"></div>
+        <div class="point point-3"></div>
+        <div class="point point-4"></div>
+      </div>
+      <div class="btn">
+        <a href="#"></a>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="tit"></div>
+      <div class="con"></div>
+    </div>
     <div class="col-3">
       <div class="tit"></div>
       <div class="con">
         <ul>
-          <li v-for="(item,index) in cardList" :key="index">
+          <li v-for="(item,index) in cardList" :key="index" class="hvr-grow">
             <img :src="item.img" alt srcset>
           </li>
         </ul>
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="tit"></div>
+      <div class="news">
+        <div class="news-t">
+          <span>新闻资讯</span>
+          <a href="#">更多新闻》</a>
+        </div>
+        <div class="news-c">
+          <div class="newsc-img">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="../assets/img_1.jpg" alt>
+                </a>
+              </li>
+              <li>
+                <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+              </li>
+            </ul>
+          </div>
+          <div class="newsc-list">
+            <div class="item">
+              <dl>
+                <dd>23</dd>
+                <dd>2019-04</dd>
+              </dl>
+              <ul>
+                <li>
+                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+                </li>
+                <li>
+                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
+                  快车道光伏龙头企业竞相迈入……
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <dl>
+                <dd>23</dd>
+                <dd>2019-04</dd>
+              </dl>
+              <ul>
+                <li>
+                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+                </li>
+                <li>
+                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
+                  快车道光伏龙头企业竞相迈入……
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <dl>
+                <dd>23</dd>
+                <dd>2019-04</dd>
+              </dl>
+              <ul>
+                <li>
+                  <a href="#">光伏龙头企业竞相迈入组件4.0快车道</a>
+                </li>
+                <li>
+                  光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0
+                  快车道光伏龙头企业竞相迈入……
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-t">
+          <span>活动信息</span>
+          <a href="#">更多信息》</a>
+        </div>
+        <div class="event-c"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -123,9 +213,6 @@ export default {
         width: 357px;
         height: 256px;
         display: block;
-        &:hover{
-          animation: pulse 1s;
-        }
       }
       a.btn-1 {
         background: url("../assets/bannercv_1.png") 0 0 no-repeat;
@@ -141,7 +228,51 @@ export default {
   .col-1 {
     width: 100%;
     height: 662px;
+    padding-top: 80px;
     background: url("../assets/ibg_1.jpg") center 0 no-repeat;
+    .tit {
+      height: 80px;
+      background: url("../assets/tit_1.png") center 0 no-repeat;
+      margin-bottom: 50px;
+    }
+    .con {
+      width: 1200px;
+      height: 288px;
+      position: relative;
+      margin: 0 auto 50px auto;
+      background: url("../assets/con_1.png") center 0 no-repeat;
+      .point {
+        width: 101px;
+        height: 7px;
+        overflow: hidden;
+        position: absolute;
+        top: 168px;
+        background-image: url("../assets/point.png");
+        background-repeat: no-repeat;
+        animation: point 1s steps(1) 0s infinite both;
+      }
+      .point-1 {
+        left: 145px;
+      }
+      .point-2 {
+        left: 412px;
+      }
+      .point-3 {
+        left: 685px;
+      }
+      .point-4 {
+        left: 953px;
+      }
+    }
+    .btn {
+      text-align: center;
+      a {
+        width: 291px;
+        height: 65px;
+        display: inline-block;
+        background: url("../assets/btn_1.png") center 0 no-repeat;
+      }
+    }
   }
   .col-2 {
     width: 100%;
@@ -178,7 +309,39 @@ export default {
   .col-4 {
     width: 100%;
     height: 1243px;
+    padding-top: 90px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
+    .tit {
+      height: 80px;
+      background: url("../assets/tit_4.png") center 0 no-repeat;
+      margin-bottom: 20px;
+    }
+    .news {
+      width: 1200px;
+      margin: 0 auto 50px auto;
+      .news-t {
+        height: 32px;
+        line-height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 22px;
+        border-bottom: 1px solid #8d8d8d;
+      }
+    }
+    .event {
+      width: 1200px;
+      margin: 0 auto;
+      .event-t {
+        height: 32px;
+        line-height: 32px;
+        display: flex;
+        font-size: 22px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #8d8d8d;
+      }
+    }
   }
 }
 </style>
