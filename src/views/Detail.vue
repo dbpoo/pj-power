@@ -53,6 +53,7 @@ export default {};
       height: 60px;
       line-height: 60px;
       margin-bottom: 80px;
+      font-weight: bold;
       font-size: 20px;
       font-weight: bold;
       color: #6c6c6c;
@@ -69,12 +70,14 @@ export default {};
       text-align: center;
       padding: 0 100px;
       margin-bottom: 55px;
+      color: #484848;
     }
     .news-con {
-      font-size: 24px;
+      font-size: 20px;
       p {
         text-indent: 2em;
         padding-bottom: 20px;
+        color: #6c6c6c;
       }
     }
   }
