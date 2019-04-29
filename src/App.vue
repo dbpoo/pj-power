@@ -12,31 +12,32 @@
         <div class="nav-link" v-show="isShow">
           <router-link to="/">首页</router-link>
           <router-link to="/solutions">解决方案</router-link>
-          <!-- <router-link to="/">交易平台</router-link>
-          <router-link to="/">研究院</router-link>
-          <router-link to="/">新闻动态</router-link> -->
+          <a href="javascript:;">交易平台</a>
+          <a href="javascript:;">研究院</a>
+          <a href="javascript:;">新闻动态</a>
           <router-link to="/about">关于我们</router-link>
         </div>
       </div>
     </div>
-    <router-view/>
+    <div class="wrapper">
+      <router-view/>
+    </div>
     <div class="flink">
       <div class="flink-flex">
         <ul class="ul1">
-          <li class="li1">新能博安</li>
           <li class="li2">北京市东城区和平里西街51号雍和宫壹中心</li>
           <li class="li3">010-64268933</li>
         </ul>
         <ul class="ul2">
           <li class="li1">友情链接</li>
           <li class="li2">
-            <a href="javascript:;">中数能研究院</a>
+            <a href="javascript:;">国研智库</a>
           </li>
           <li class="li2">
             <a href="javascript:;">清华X-lab</a>
           </li>
           <li class="li2">
-            <a href="javascript:;">哈希未来</a>
+            <a href="javascript:;">中数能研究院</a>
           </li>
         </ul>
         <ul class="ul3">
@@ -44,7 +45,7 @@
         </ul>
       </div>
     </div>
-    <div class="copyright"></div>
+    <div class="copyright"><span>Copyright © 国研新能科技有限公司 版权所有 备案号 京ICP备19014207号</span></div>
   </div>
 </template>
 
@@ -169,8 +170,18 @@ export default {
 }
 .copyright {
   height: 78px;
-  background: #3a3434 url("./assets/copyright.png") center center no-repeat;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #b0b0b0;
+  background-color: #3e3e3e;
   border-top: 1px solid #777777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  min-height: 77px;
 }
 
 @media screen and (max-width: 768px) {
@@ -228,9 +239,6 @@ export default {
         padding: 15px;
       }
     }
-  }
-  .copyright {
-    background-size: contain;
   }
 }
 </style>

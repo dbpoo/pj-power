@@ -79,9 +79,7 @@
                 <li class="li1">
                   <a href="javascript:;" @click="toDetail(item)">{{item.tit}}</a>
                 </li>
-                <li class="li2">
-                  {{item.con}}
-                </li>
+                <li class="li2">{{item.con}}</li>
               </ul>
             </div>
           </div>
@@ -124,25 +122,25 @@ export default {
       lightArr: [100, 60, 150, 75, 120],
       newList: [
         {
-          id: 1,
-          tit: "光伏龙头企业竞相迈入组件4.0快车道",
+          id: 3,
+          tit: "国家能源局下达十三五第二批光伏扶贫项目 总装机规模达167万千瓦",
           con:
-            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
-          time: "2019-04-22"
+            "4月19日，国家能源局网站发布《国家能源局 国务院扶贫办关于下达“十三五”第二批光伏扶贫项目计……",
+          time: "2019-04-27"
         },
         {
-          id:2,
+          id: 2,
           tit: "多省已启动光伏平价上网项目申报 首批项目有望年内落地",
           con:
             "国家能源局在上周连续发布了多项重要政策。4月10日，国家能源局发布《关于推进风电、光伏发电……",
           time: "2019-04-23"
         },
         {
-          id: 3,
-          tit: "国家能源局下达十三五第二批光伏扶贫项目 总装机规模达167万千瓦",
+          id: 1,
+          tit: "光伏龙头企业竞相迈入组件4.0快车道",
           con:
-            "4月19日，国家能源局网站发布《国家能源局 国务院扶贫办关于下达“十三五”第二批光伏扶贫项目计……",
-          time: "2019-04-27"
+            "光伏龙头企业竞相迈入组件4.0快车道光伏龙头企业竞相迈入组件4.0 快车道光伏龙头企业竞相迈入……",
+          time: "2019-04-22"
         }
       ],
       cardList: [
@@ -173,29 +171,16 @@ export default {
       ],
       eventSlides: [
         {
-          img: require("../assets/eventimg.jpg"),
-          href: "/",
-          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+          img: require("../assets/eventimg_1.jpg"),
+          href: "/"
         },
         {
-          img: require("../assets/eventimg.jpg"),
-          href: "/",
-          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+          img: require("../assets/eventimg_2.jpg"),
+          href: "/"
         },
         {
-          img: require("../assets/eventimg.jpg"),
-          href: "/",
-          txt: "光伏龙头企业竞相迈入组件4.0快车道"
-        },
-        {
-          img: require("../assets/eventimg.jpg"),
-          href: "/",
-          txt: "光伏龙头企业竞相迈入组件4.0快车道"
-        },
-        {
-          img: require("../assets/eventimg.jpg"),
-          href: "/",
-          txt: "光伏龙头企业竞相迈入组件4.0快车道"
+          img: require("../assets/eventimg_3.jpg"),
+          href: "/"
         }
       ],
       bannerSlides: [
@@ -228,7 +213,7 @@ export default {
         coverflowEffect: {
           rotate: 0,
           stretch: 0,
-          depth: 100,
+          depth: 200,
           modifier: 1,
           slideShadows: true
         },
@@ -245,20 +230,20 @@ export default {
   },
   methods: {
     getYM(time) {
-      let arr = time.split('-');
-      return arr[0] + "-" + arr[1]
+      let arr = time.split("-");
+      return arr[0] + "-" + arr[1];
     },
     getD(time) {
-      let arr = time.split('-');
-      return arr[2]
+      let arr = time.split("-");
+      return arr[2];
     },
     toDetail(item) {
       this.$router.push({
-        path: 'detail',
+        path: "detail",
         query: {
           id: item.id
         }
-      })
+      });
     }
   }
 };
@@ -640,7 +625,7 @@ export default {
       .event-c {
         padding-top: 80px;
         .swiper-slide {
-          width: 594px;
+          width: 687px;
           ul {
             li.li1 {
               width: 100%;
@@ -652,7 +637,7 @@ export default {
         }
         .swiper-slide-prev,
         .swiper-slide-next {
-          width: 594px;
+          width: 687px;
           height: 338px;
           overflow: hidden;
         }
