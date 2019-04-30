@@ -98,7 +98,6 @@
                 <li class="li1">
                   <img :src="slide.img" alt>
                 </li>
-                <li class="li2">{{slide.txt}}</li>
               </ul>
             </swiper-slide>
             <!-- Optional controls -->
@@ -189,11 +188,7 @@ export default {
           href: "/"
         },
         {
-          img: require("../assets/banner_1.jpg"),
-          href: "/"
-        },
-        {
-          img: require("../assets/banner_1.jpg"),
+          img: require("../assets/banner_2.jpg"),
           href: "/"
         }
       ],
@@ -262,6 +257,19 @@ export default {
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
+    }
+    .swiper-pagination {
+      bottom: 33px;
+    }
+    .swiper-pagination-bullet {
+      width: 17px;
+      height: 17px;
+      margin: 0 10px;
+      background: #c0c0c0;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: #2fccf6;
     }
     .banner-btn {
       width: 1200px;
