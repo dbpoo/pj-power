@@ -1,7 +1,7 @@
 <template>
   <div class="solutions">
     <div class="banner">
-      <h2>新能源资产上链、发行、清结算系统解决方案提供商</h2>
+      <h2>新能源资产上链、发行、清结算<br>系统解决方案提供商</h2>
     </div>
     <div class="solutions-1">
       <div class="solution-flex">

@@ -39,6 +39,9 @@
           <li class="li2">
             <a href="javascript:;">中数能研究院</a>
           </li>
+          <li class="li2">
+            <a href="javascript:;">中简律师事务所</a>
+          </li>
         </ul>
         <ul class="ul3">
           <li class="li1">全媒体平台</li>
@@ -123,8 +126,7 @@ export default {
   }
 }
 .flink {
-  height: 168px;
-  padding-top: 35px;
+  padding: 35px 0;
   background-color: #3a3434;
   .flink-flex {
     width: 1200px;
