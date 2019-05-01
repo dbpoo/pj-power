@@ -1,5 +1,6 @@
 module.exports = {
   publicPath: "./",
   assetsDir: "assets",
-  filenameHashing: false
+  filenameHashing: false,
+  productionSourceMap: false
 };

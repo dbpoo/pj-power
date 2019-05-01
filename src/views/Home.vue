@@ -65,7 +65,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;" @click="toDetail(newList[0])">光伏龙头企业竞相迈入组件4.0快车道</a>
+                <a href="javascript:;" @click="toDetail(newList[0])">国研智库&清华x-lab数权经济实验室揭牌仪式在国研智库召开</a>
               </li>
             </ul>
           </div>
@@ -769,6 +769,7 @@ export default {
           .newsc-list {
             width: 100%;
             .item {
+              height: auto;
               dl {
                 width: 200px;
                 padding-right: 20px;

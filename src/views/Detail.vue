@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="banner">
-      <h2>新能源资产上链、发行、清结算系<br>统解决方案提供商</h2>
+      <h2>新能源资产上链、发行、清结算<br>系统解决方案提供商</h2>
     </div>
     <div class="news">
       <div class="news-nav">
@@ -162,6 +162,12 @@ export default {
       }
       .news-con {
         padding: 0 15px;
+        p {
+          text-indent: 0;
+          img {
+            width: 100%;
+          }
+        }
       }
     }
   }
