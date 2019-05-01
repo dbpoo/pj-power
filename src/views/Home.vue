@@ -232,6 +232,11 @@ export default {
       let arr = time.split("-");
       return arr[2];
     },
+    getNewsList(){
+      this.$get('posts').then((res) => {
+        console.log(res)
+      })
+    },
     toDetail(item) {
       this.$router.push({
         path: "detail",
@@ -240,6 +245,9 @@ export default {
         }
       });
     }
+  },
+  mounted() {
+    this.getNewsList();
   }
 };
 </script>
