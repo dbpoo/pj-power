@@ -11,7 +11,7 @@
         </span>
         <span>{{time}}</span>
       </div>
-      <div class="news-tit">{{tit}}</div>
+      <div class="news-tit" v-html="tit"></div>
       <div class="news-con" v-html="con"></div>
     </div>
   </div>
@@ -99,6 +99,7 @@ export default {
         color: #6c6c6c;
       }
       figure.wp-block-image {
+        padding-bottom: 20px;
         text-align: center;
         figcaption {
           font-size: 14px;

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.timeout = 5000;
+axios.defaults.timeout = 8000;
 axios.defaults.baseURL = "http://www.xinnengboan.com:8080/api/wp-json/wp/v2/";
 axios.defaults.headers = {
   "Content-Type": "application/json; charset=utf-8"

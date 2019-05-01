@@ -56,30 +56,30 @@
           <span>新闻资讯</span>
           <!-- <a href="#">更多新闻》</a> -->
         </div>
-        <div class="news-c">
+        <div class="news-c" v-if="newList.length > 0">
           <div class="newsc-img">
             <ul>
               <li>
-                <a href="javascript:;" @click="toDetail(newList[0])">
-                  <img src="../assets/img_1.jpg" alt>
+                <a href="javascript:;" @click="toDetail(newTop.id)">
+                  <img :src="newTop.img ? newTop.img : 'http://www.xinnengboan.com/assets/img/default.jpg'" alt>
                 </a>
               </li>
               <li>
-                <a href="javascript:;" @click="toDetail(newList[0])">国研智库&清华x-lab数权经济实验室揭牌仪式在国研智库召开</a>
+                <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
               </li>
             </ul>
           </div>
           <div class="newsc-list">
             <div class="item" v-for="(item,index) in newList" :key="index">
               <dl>
-                <dd class="dd1">{{getD(item.time)}}</dd>
-                <dd class="dd2">{{getYM(item.time)}}</dd>
+                <dd class="dd1">{{getD(item.date)}}</dd>
+                <dd class="dd2">{{getYM(item.date)}}</dd>
               </dl>
               <ul>
                 <li class="li1">
-                  <a href="javascript:;" @click="toDetail(item)">{{item.tit}}</a>
+                  <a href="javascript:;" @click="toDetail(item.id)" v-html="item.title.rendered"></a>
                 </li>
-                <li class="li2">{{item.con}}</li>
+                <li class="li2" v-html="item.excerpt.rendered"></li>
               </ul>
             </div>
           </div>
@@ -111,6 +111,7 @@
 </template>
 
 <script>
+import _ from "loadsh";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 
@@ -119,29 +120,12 @@ export default {
   data() {
     return {
       lightArr: [100, 60, 150, 75, 120],
-      newList: [
-        {
-          id: 5,
-          tit: "国研智库&清华x-lab数权经济实验室揭牌仪式在国研智库召开",
-          con:
-            "4月27日，国研智库&清华x-lab数权经济实验室在国研智库正式成立",
-          time: "2019-04-30"
-        },
-        {
-          id: 4,
-          tit: "新能源数权经济发展中心揭牌仪式在国研智库召开",
-          con:
-            "4月27日下午，新能源数权经济发展中心揭牌仪式在国研智库成功举办。本次揭牌仪式由国研智库创……",
-          time: "2019-04-29"
-        },
-        {
-          id: 3,
-          tit: "国家能源局下达十三五第二批光伏扶贫项目 总装机规模达167万千瓦",
-          con:
-            "4月19日，国家能源局网站发布《国家能源局 国务院扶贫办关于下达“十三五”第二批光伏扶贫项目计……",
-          time: "2019-04-27"
-        },
-      ],
+      newList: [],
+      newTop: {
+        id: "",
+        tit: "",
+        img: ""
+      },
       cardList: [
         {
           img: require("../assets/card_1.jpg"),
@@ -225,23 +209,33 @@ export default {
   },
   methods: {
     getYM(time) {
-      let arr = time.split("-");
+      let arr = time.split("T")[0].split("-");
       return arr[0] + "-" + arr[1];
     },
     getD(time) {
-      let arr = time.split("-");
+      let arr = time.split("T")[0].split("-");
       return arr[2];
     },
-    getNewsList(){
-      this.$get('posts').then((res) => {
-        console.log(res)
-      })
+    getNewsList() {
+      this.$get("posts").then(res => {
+        this.newList = _.slice(res,0,3);
+
+        if (this.newList.length > 0) {
+          this.newTop.id = this.newList[0].id;
+          this.newTop.tit = this.newList[0].title.rendered;
+          if (this.newList[0].featured_media) {
+            this.$get("media/" + this.newList[0].featured_media).then(res => {
+              this.newTop.img = res.source_url;
+            });
+          }
+        }
+      });
     },
-    toDetail(item) {
+    toDetail(id) {
       this.$router.push({
         path: "detail",
         query: {
-          id: item.id
+          id: id
         }
       });
     }
