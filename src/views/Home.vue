@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <div class="banner-swiper">
-      <swiper :options="swiperOption" ref="bannerSwiper">
+      <swiper :options="swiperOption" ref="bannerSwiper" v-if="bannerSlides.length > 0">
         <!-- slides -->
         <swiper-slide v-for="(slide,index) in bannerSlides" :key="index">
-          <div :style="{backgroundImage:'url('+slide.img+')'}" class="slide-img"></div>
+          <div :style="{backgroundImage:'url('+slide+')'}" class="slide-img"></div>
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -61,7 +61,10 @@
             <ul>
               <li>
                 <a href="javascript:;" @click="toDetail(newTop.id)">
-                  <img :src="newTop.img ? newTop.img : 'http://www.xinnengboan.com/assets/img/default.jpg'" alt>
+                  <img
+                    :src="newTop.img ? newTop.img : 'http://www.xinnengboan.com/assets/img/default.jpg'"
+                    alt
+                  >
                 </a>
               </li>
               <li>
@@ -166,16 +169,7 @@ export default {
           href: "/"
         }
       ],
-      bannerSlides: [
-        {
-          img: require("../assets/banner_1.jpg"),
-          href: "/"
-        },
-        {
-          img: require("../assets/banner_2.jpg"),
-          href: "/"
-        }
-      ],
+      bannerSlides: [],
       swiperOption: {
         autoplay: true,
         loop: true,
@@ -217,18 +211,21 @@ export default {
       return arr[2];
     },
     getNewsList() {
-      this.$get("posts").then(res => {
-        this.newList = _.slice(res,0,3);
+      this.$get("wp/v2/posts").then(res => {
+        this.newList = _.slice(res, 0, 3);
 
         if (this.newList.length > 0) {
           this.newTop.id = this.newList[0].id;
           this.newTop.tit = this.newList[0].title.rendered;
-          if (this.newList[0].featured_media) {
-            this.$get("media/" + this.newList[0].featured_media).then(res => {
-              this.newTop.img = res.source_url;
-            });
-          }
+          this.newTop.img = this.newList[0].better_featured_image
+            ? this.newList[0].better_featured_image.source_url
+            : "";
         }
+      });
+    },
+    getBannerSlider() {
+      this.$get("smartslider3/v1/sliders/2").then(res => {
+        this.bannerSlides = res.html;
       });
     },
     toDetail(id) {
@@ -241,6 +238,7 @@ export default {
     }
   },
   mounted() {
+    this.getBannerSlider();
     this.getNewsList();
   }
 };
