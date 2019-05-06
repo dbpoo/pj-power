@@ -1,10 +1,17 @@
 <template>
   <div class="home">
     <div class="banner-swiper">
-      <swiper :options="swiperOption" ref="bannerSwiper" v-if="bannerSlides.length > 0">
+      <swiper
+        :options="swiperOption"
+        ref="bannerSwiper"
+        v-if="bannerSlides.length > 0"
+      >
         <!-- slides -->
-        <swiper-slide v-for="(slide,index) in bannerSlides" :key="index">
-          <div :style="{backgroundImage:'url('+slide+')'}" class="slide-img"></div>
+        <swiper-slide v-for="(slide, index) in bannerSlides" :key="index">
+          <div
+            :style="{ backgroundImage: 'url(' + slide + ')' }"
+            class="slide-img"
+          ></div>
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -27,60 +34,46 @@
         <router-link to="/solutions"></router-link>
       </div>
     </div>
-    <div class="col-2">
-      <div class="tit"></div>
-      <div class="con">
-        <a class="light" :class="'light-'+item" v-for="(item,index) in lightArr" :key="index">
-          <span class="sp1"></span>
-          <span class="sp2"></span>
-        </a>
-      </div>
-      <div class="con-mobile">
-        <span class="light" :class="'light-'+item" v-for="(item,index) in lightArr" :key="index"></span>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="tit"></div>
-      <div class="con">
-        <ul>
-          <li v-for="(item,index) in cardList" :key="index" class="hvr-grow">
-            <img :src="item.img" alt srcset>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-4">
+    <div class="col-5">
       <div class="tit"></div>
       <div class="news">
-        <div class="news-t">
-          <span>新闻资讯</span>
-          <!-- <a href="#">更多新闻》</a> -->
-        </div>
         <div class="news-c" v-if="newList.length > 0">
           <div class="newsc-img">
             <ul>
               <li>
                 <a href="javascript:;" @click="toDetail(newTop.id)">
                   <img
-                    :src="newTop.img ? newTop.img : 'http://www.xinnengboan.com/assets/img/default.jpg'"
+                    :src="
+                      newTop.img
+                        ? newTop.img
+                        : 'http://www.xinnengboan.com/assets/img/default.jpg'
+                    "
                     alt
-                  >
+                  />
                 </a>
               </li>
               <li>
-                <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
+                <a
+                  href="javascript:;"
+                  @click="toDetail(newTop.id)"
+                  v-html="newTop.tit"
+                ></a>
               </li>
             </ul>
           </div>
           <div class="newsc-list">
-            <div class="item" v-for="(item,index) in newList" :key="index">
+            <div class="item" v-for="(item, index) in newList" :key="index">
               <dl>
-                <dd class="dd1">{{getD(item.date)}}</dd>
-                <dd class="dd2">{{getYM(item.date)}}</dd>
+                <dd class="dd1">{{ getD(item.date) }}</dd>
+                <dd class="dd2">{{ getYM(item.date) }}</dd>
               </dl>
               <ul>
                 <li class="li1">
-                  <a href="javascript:;" @click="toDetail(item.id)" v-html="item.title.rendered"></a>
+                  <a
+                    href="javascript:;"
+                    @click="toDetail(item.id)"
+                    v-html="item.title.rendered"
+                  ></a>
                 </li>
                 <li class="li2" v-html="item.excerpt.rendered"></li>
               </ul>
@@ -88,18 +81,49 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-2">
+      <div class="tit"></div>
+      <div class="con">
+        <a
+          class="light"
+          :class="'light-' + item"
+          v-for="(item, index) in lightArr"
+          :key="index"
+        >
+          <span class="sp1"></span>
+          <span class="sp2"></span>
+        </a>
+      </div>
+      <div class="con-mobile">
+        <span
+          class="light"
+          :class="'light-' + item"
+          v-for="(item, index) in lightArr"
+          :key="index"
+        ></span>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="tit"></div>
+      <div class="con">
+        <ul>
+          <li v-for="(item, index) in cardList" :key="index" class="hvr-grow">
+            <img :src="item.img" alt srcset />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="tit"></div>
       <div class="event">
-        <div class="event-t">
-          <span>活动信息</span>
-          <!-- <a href="#">更多信息》</a> -->
-        </div>
         <div class="event-c">
           <swiper :options="swiperEventOption" ref="eventSwiper">
             <!-- slides -->
-            <swiper-slide v-for="(slide,index) in eventSlides" :key="index">
+            <swiper-slide v-for="(slide, index) in eventSlides" :key="index">
               <ul>
                 <li class="li1">
-                  <img :src="slide.img" alt>
+                  <img :src="slide.img" alt />
                 </li>
               </ul>
             </swiper-slide>
@@ -535,8 +559,64 @@ export default {
   }
   .col-4 {
     width: 100%;
-    height: 1243px;
     padding-top: 90px;
+    padding-bottom: 40px;
+    background: url("../assets/ibg_4.jpg") center 0 no-repeat;
+    .tit {
+      height: 80px;
+      background: url("../assets/tit_4.png") center 0 no-repeat;
+    }
+    .event {
+      width: 1200px;
+      margin: 0 auto;
+      .event-c {
+        padding-top: 80px;
+        .swiper-slide {
+          width: 687px;
+          ul {
+            li.li1 {
+              width: 100%;
+            }
+            li.li2 {
+              display: none;
+            }
+          }
+        }
+        .swiper-slide-prev,
+        .swiper-slide-next {
+          width: 687px;
+          height: 338px;
+          overflow: hidden;
+        }
+        .swiper-slide-active {
+          ul {
+            li.li2 {
+              display: block;
+              text-align: center;
+            }
+          }
+        }
+        .swiper-container-3d .swiper-slide-shadow-left {
+          background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0)
+          );
+        }
+        .swiper-container-3d .swiper-slide-shadow-right {
+          background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0)
+          );
+        }
+      }
+    }
+  }
+  .col-5 {
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 80px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
     .tit {
       height: 80px;
@@ -620,61 +700,6 @@ export default {
         }
       }
     }
-    .event {
-      width: 1200px;
-      margin: 0 auto;
-      .event-t {
-        height: 40px;
-        line-height: 40px;
-        display: flex;
-        font-size: 22px;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #8d8d8d;
-      }
-      .event-c {
-        padding-top: 80px;
-        .swiper-slide {
-          width: 687px;
-          ul {
-            li.li1 {
-              width: 100%;
-            }
-            li.li2 {
-              display: none;
-            }
-          }
-        }
-        .swiper-slide-prev,
-        .swiper-slide-next {
-          width: 687px;
-          height: 338px;
-          overflow: hidden;
-        }
-        .swiper-slide-active {
-          ul {
-            li.li2 {
-              display: block;
-              text-align: center;
-            }
-          }
-        }
-        .swiper-container-3d .swiper-slide-shadow-left {
-          background-image: linear-gradient(
-            to left,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0)
-          );
-        }
-        .swiper-container-3d .swiper-slide-shadow-right {
-          background-image: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0)
-          );
-        }
-      }
-    }
   }
 }
 
@@ -746,6 +771,15 @@ export default {
       }
     }
     .col-4 {
+      .event {
+        width: 100%;
+        padding: 0 15px;
+        .event-c {
+          padding: 30px 0;
+        }
+      }
+    }
+    .col-5 {
       height: auto;
       padding-top: 30px;
       .news {
@@ -777,13 +811,6 @@ export default {
               }
             }
           }
-        }
-      }
-      .event {
-        width: 100%;
-        padding: 0 15px;
-        .event-c {
-          padding: 30px 0;
         }
       }
     }

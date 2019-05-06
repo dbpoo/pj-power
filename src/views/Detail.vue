@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getNews(id) {
-      this.$get('posts/'+id).then((res) => {
+      this.$get('wp/v2/posts/'+id).then((res) => {
         this.tit = res.title.rendered || "";
         this.con = res.content.rendered || "";
         this.time = res.date ? this._formatTime(res.date) : ""

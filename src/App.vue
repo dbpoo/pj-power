@@ -173,7 +173,7 @@ export default {
 .copyright {
   height: 78px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   color: #b0b0b0;
   background-color: #3e3e3e;
