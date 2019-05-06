@@ -620,7 +620,7 @@ export default {
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
     .tit {
       height: 80px;
-      background: url("../assets/tit_4.png") center 0 no-repeat;
+      background: url("../assets/tit_5.png") center 0 no-repeat;
       margin-bottom: 20px;
     }
     .news {
