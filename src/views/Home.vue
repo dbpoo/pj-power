@@ -566,8 +566,6 @@ export default {
     padding-bottom: 80px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
     .tit {
-      width: 100%;
-      text-align: center;
       margin-bottom: 20px;
     }
     .news {
