@@ -22,8 +22,18 @@
         <span><i>多终端访问</i></span>
       </div>
       <div class="type">
-        <div class="qr"></div>
-        <div class="client"></div>
+        <div class="client">
+          <a href="javascript:;" class="icon-ios">iphone访问<span></span></a>
+          <a href="javascript:;" class="icon-android"
+            >Android访问<span></span
+          ></a>
+          <a href="javascript:;" class="icon-window" @click="toast"
+            >Windows访问</a
+          >
+          <a href="javascript:;" class="icon-macos" @click="toast"
+            >Mac OS访问</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -33,7 +43,7 @@
 export default {
   methods: {
     toast() {
-      alert('尽情期待！')
+      alert("尽情期待！");
     }
   }
 };
@@ -98,18 +108,59 @@ export default {
       margin: 0 auto;
       position: relative;
       .client {
-        width: 905px;
         height: 86px;
-        float: right;
-        background: url("../assets/download_client.png") center 0 no-repeat;
-      }
-      .qr {
-        width: 240px;
-        height: 240px;
-        position: absolute;
-        top: -70px;
-        left: 0;
-        background: url("../assets/download_qr.jpg") center 0 no-repeat;
+        line-height: 86px;
+        display: flex;
+        justify-content: space-between;
+        a {
+          display: inline-block;
+          padding-left: 80px;
+          font-size: 24px;
+          color: #fff;
+          position: relative;
+        }
+        a.icon-ios {
+          background: url("../assets/icon_iphone.png") 0 center no-repeat;
+          span {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            margin: -40px 0 0 -10px;
+            background: url("../assets/download_qr.jpg") center 0 no-repeat;
+            display: none;
+          }
+          &:hover {
+            span {
+              display: block;
+            }
+          }
+        }
+        a.icon-android {
+          background: url("../assets/icon_android.png") 0 center no-repeat;
+          span {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            margin: -40px 0 0 -10px;
+            background: url("../assets/download_qr.jpg") center 0 no-repeat;
+            display: none;
+          }
+          &:hover {
+            span {
+              display: block;
+            }
+          }
+        }
+        a.icon-window {
+          background: url("../assets/icon_window.png") 0 center no-repeat;
+        }
+        a.icon-macos {
+          background: url("../assets/icon_iphone.png") 0 center no-repeat;
+        }
       }
     }
   }

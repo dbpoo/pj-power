@@ -36,6 +36,7 @@
     </div>
     <div class="col-5">
       <div class="tit"><span><i>新闻动态</i></span></div>
+      <div class="more"><router-link to="/list">更多新闻》</router-link></div>
       <div class="news">
         <div class="news-c" v-if="newList.length > 0">
           <div class="newsc-img">
@@ -513,6 +514,9 @@ export default {
     padding-top: 90px;
     padding-bottom: 40px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
+    .tit {
+      margin-bottom: 0;
+    }
     .event {
       width: 1200px;
       margin: 0 auto;
@@ -567,6 +571,14 @@ export default {
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
     .tit {
       margin-bottom: 20px;
+      position: relative;
+    }
+    .more {
+      width: 1200px;
+      margin: 0 auto;
+      text-align: right;
+      padding-top: 20px;
+      font-size: 20px;
     }
     .news {
       width: 1200px;
@@ -581,7 +593,7 @@ export default {
         border-bottom: 1px solid #8d8d8d;
       }
       .news-c {
-        padding-top: 55px;
+        padding-top: 20px;
         display: flex;
         justify-content: space-between;
         .newsc-img {
@@ -629,6 +641,9 @@ export default {
               li.li1 {
                 font-size: 20px;
                 margin-bottom: 10px;
+                height: 30px;
+                line-height: 30px;
+                overflow: hidden;
                 a {
                   color: #484848;
                   &:hover {
