@@ -109,38 +109,4 @@ export default {
     }
   }
 }
-@media screen and (max-width: 768px) {
-  .detail {
-    min-width: 100%;
-    .banner {
-      height: 300px;
-      background-size: cover;
-      h2 {
-        font-size: 30px;
-      }
-    }
-    .news {
-      width: 100%;
-      padding-top: 0;
-      .news-nav {
-        padding: 0 15px;
-        margin-bottom: 15px;
-      }
-      .news-tit {
-        font-size: 28px;
-        padding: 0 15px;
-        margin-bottom: 30px;
-      }
-      .news-con {
-        padding: 0 15px;
-        p {
-          text-indent: 0;
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
 </style>

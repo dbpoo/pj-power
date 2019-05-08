@@ -13,6 +13,12 @@ export default new Router({
       component: () => import(/* webpackChunkName: "home" */ "./views/Home.vue")
     },
     {
+      path: "/list",
+      name: "list",
+      component: () =>
+        import(/* webpackChunkName: "detail" */ "./views/List.vue")
+    },
+    {
       path: "/detail",
       name: "detail",
       component: () =>
@@ -20,9 +26,21 @@ export default new Router({
     },
     {
       path: "/solutions",
-      name: " ",
+      name: "solutions",
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/Solutions.vue")
+    },
+    {
+      path: "/download",
+      name: "download",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Download.vue")
+    },
+    {
+      path: "/school",
+      name: "school",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/School.vue")
     },
     {
       path: "/about",

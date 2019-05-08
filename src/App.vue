@@ -12,9 +12,9 @@
         <div class="nav-link" v-show="isShow">
           <router-link to="/">首页</router-link>
           <router-link to="/solutions">解决方案</router-link>
-          <a href="javascript:;">交易平台</a>
-          <a href="javascript:;">研究院</a>
-          <a href="javascript:;">新闻动态</a>
+          <router-link to="/download">交易平台</router-link>
+          <router-link to="/school">新能研究院</router-link>
+          <router-link to="/list">新闻动态</router-link>
           <router-link to="/about">关于我们</router-link>
         </div>
       </div>
@@ -184,63 +184,5 @@ export default {
 }
 .wrapper {
   min-height: 77px;
-}
-
-@media screen and (max-width: 768px) {
-  .nav {
-    .nav-flex {
-      width: 100%;
-      .nav-logo {
-        margin-left: 10px;
-      }
-      .nav-link {
-        width: 100%;
-        position: fixed;
-        flex-wrap: wrap;
-        top: 77px;
-        background-color: #727272;
-        height: calc(100% - 77px);
-        a {
-          width: 100%;
-          height: 54px;
-          line-height: 54px;
-          display: block;
-          margin: 0;
-          padding: 0 20px;
-          color: #e6e6e6;
-          font-weight: normal;
-          border-bottom: 1px solid #bfbfbf;
-        }
-      }
-      .nav-swith {
-        width: 77px;
-        height: 77px;
-        .swith-on {
-          width: 77px;
-          height: 77px;
-          display: block;
-          background: url("./assets/switch.png") center center no-repeat;
-        }
-        .swith-off {
-          width: 77px;
-          height: 77px;
-          display: block;
-          background: url("./assets/close.png") center center no-repeat;
-        }
-      }
-    }
-  }
-  .flink {
-    height: auto;
-    padding-top: 15px;
-    .flink-flex {
-      width: 100%;
-      flex-wrap: wrap;
-      ul {
-        width: 100%;
-        padding: 15px;
-      }
-    }
-  }
 }
 </style>

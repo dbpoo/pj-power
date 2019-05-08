@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="col-1">
-      <div class="tit"></div>
+      <div class="tit"><span><i>新能源资产价值流通服务</i></span></div>
       <div class="con">
         <div class="point point-1"></div>
         <div class="point point-2"></div>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="col-5">
-      <div class="tit"></div>
+      <div class="tit"><span><i>新闻动态</i></span></div>
       <div class="news">
         <div class="news-c" v-if="newList.length > 0">
           <div class="newsc-img">
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="col-2">
-      <div class="tit"></div>
+      <div class="tit"><span><i>“阳光照见爱”我们在行动</i></span></div>
       <div class="con">
         <a
           class="light"
@@ -95,17 +95,9 @@
           <span class="sp2"></span>
         </a>
       </div>
-      <div class="con-mobile">
-        <span
-          class="light"
-          :class="'light-' + item"
-          v-for="(item, index) in lightArr"
-          :key="index"
-        ></span>
-      </div>
     </div>
     <div class="col-3">
-      <div class="tit"></div>
+      <div class="tit"><span><i>项目展示</i></span></div>
       <div class="con">
         <ul>
           <li v-for="(item, index) in cardList" :key="index" class="hvr-grow">
@@ -115,7 +107,7 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="tit"></div>
+      <div class="tit"><span><i>活动信息</i></span></div>
       <div class="event">
         <div class="event-c">
           <swiper :options="swiperEventOption" ref="eventSwiper">
@@ -327,8 +319,6 @@ export default {
     padding-top: 80px;
     background: url("../assets/ibg_1.jpg") center 0 no-repeat;
     .tit {
-      height: 80px;
-      background: url("../assets/tit_1.png") center 0 no-repeat;
       margin-bottom: 50px;
     }
     .con {
@@ -376,8 +366,7 @@ export default {
     padding-top: 60px;
     background: url("../assets/ibg_2.jpg") center 0 no-repeat;
     .tit {
-      height: 80px;
-      background: url("../assets/tit_2.png") center 0 no-repeat;
+      color: #fff;
     }
     .con {
       width: 1200px;
@@ -493,42 +482,6 @@ export default {
         }
       }
     }
-    .con-mobile {
-      display: none;
-      .light {
-        display: block;
-      }
-      .light-100 {
-        width: 100%;
-        height: 257px;
-        background: url("../assets/map_100.png") 0 0 no-repeat;
-        background-size: contain;
-      }
-      .light-60 {
-        width: 100%;
-        height: 340px;
-        background: url("../assets/map_60.png") 0 0 no-repeat;
-        background-size: contain;
-      }
-      .light-150 {
-        width: 100%;
-        height: 266px;
-        background: url("../assets/map_150.png") 0 0 no-repeat;
-        background-size: contain;
-      }
-      .light-75 {
-        width: 100%;
-        height: 269px;
-        background: url("../assets/map_75.png") 0 0 no-repeat;
-        background-size: contain;
-      }
-      .light-120 {
-        width: 100%;
-        height: 300px;
-        background: url("../assets/map_120.png") 0 0 no-repeat;
-        background-size: contain;
-      }
-    }
   }
   .col-3 {
     width: 100%;
@@ -536,8 +489,6 @@ export default {
     padding-top: 110px;
     background: url("../assets/ibg_3.jpg") center 0 no-repeat;
     .tit {
-      height: 80px;
-      background: url("../assets/tit_3.png") center 0 no-repeat;
       margin-bottom: 50px;
     }
     .con {
@@ -562,10 +513,6 @@ export default {
     padding-top: 90px;
     padding-bottom: 40px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
-    .tit {
-      height: 80px;
-      background: url("../assets/tit_4.png") center 0 no-repeat;
-    }
     .event {
       width: 1200px;
       margin: 0 auto;
@@ -619,8 +566,8 @@ export default {
     padding-bottom: 80px;
     background: url("../assets/ibg_4.jpg") center 0 no-repeat;
     .tit {
-      height: 80px;
-      background: url("../assets/tit_4.png") center 0 no-repeat;
+      width: 100%;
+      text-align: center;
       margin-bottom: 20px;
     }
     .news {
@@ -694,120 +641,6 @@ export default {
               li.li2 {
                 font-size: 18px;
                 color: #878787;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .home {
-    min-width: 100%;
-    .banner-swiper {
-      height: auto;
-      .slide-img {
-        height: 400px;
-        background-size: cover;
-      }
-      .banner-btn {
-        width: 100%;
-        padding: 0 20px;
-        left: 0;
-        bottom: 50px;
-        margin-left: 0;
-        a {
-          width: 120px;
-          height: 86px;
-        }
-        a.btn-1 {
-          background-size: contain;
-        }
-        a.btn-2 {
-          background-size: contain;
-        }
-        a.btn-3 {
-          background-size: contain;
-        }
-      }
-    }
-    .col-1 {
-      height: auto;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      .con {
-        width: 90%;
-        height: 150px;
-        margin: 0 auto;
-        background-size: contain;
-        .point {
-          display: none;
-        }
-      }
-    }
-    .col-2 {
-      height: auto;
-      background: #04142c;
-      .con {
-        display: none;
-      }
-      .con-mobile {
-        display: block;
-      }
-    }
-    .col-3 {
-      height: auto;
-      padding-top: 30px;
-      .con {
-        width: 100%;
-        ul {
-          justify-content: center;
-          li {
-            margin-bottom: 30px;
-          }
-        }
-      }
-    }
-    .col-4 {
-      .event {
-        width: 100%;
-        padding: 0 15px;
-        .event-c {
-          padding: 30px 0;
-        }
-      }
-    }
-    .col-5 {
-      height: auto;
-      padding-top: 30px;
-      .news {
-        width: 100%;
-        padding: 0 15px;
-        margin-bottom: 15px;
-        .news-c {
-          padding-top: 30px;
-          flex-wrap: wrap;
-          .newsc-img {
-            width: 100%;
-            margin-bottom: 30px;
-            ul {
-              li {
-                img {
-                  width: 100%;
-                }
-              }
-            }
-          }
-          .newsc-list {
-            width: 100%;
-            .item {
-              height: auto;
-              dl {
-                width: 200px;
-                padding-right: 20px;
-                flex: 1 1 auto;
               }
             }
           }

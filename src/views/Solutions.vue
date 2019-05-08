@@ -90,43 +90,4 @@ export default {};
     background-color: #fff;
   }
 }
-@media screen and (max-width: 768px) {
-  .solutions {
-    min-width: 100%;
-    .banner {
-      height: 300px;
-      padding-top: 77px;
-      background-size: cover;
-      h2 {
-        font-size: 30px;
-      }
-    }
-    .solution-flex {
-      width: 100%;
-      height: auto;
-      padding: 30px;
-      img.sotxt {
-        width: 100%;
-      }
-      img.sohover {
-        display: none;
-      }
-    }
-    .solutions-1 {
-      height: auto;
-    }
-    .solutions-2 {
-      height: auto;
-    }
-    .solutions-3 {
-      height: auto;
-    }
-    .solutions-4 {
-      height: auto;
-    }
-    .solutions-5 {
-      height: auto;
-    }
-  }
-}
 </style>
