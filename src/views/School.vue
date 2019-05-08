@@ -107,12 +107,71 @@
       <div class="con">
         国研智库科学园新能源数权经济创新发展中心由国研智库创新科学园与青藤链盟发起设立，联合中国教育智库、交通传思智库、新能区块链共同筹备，构建数权经济（数字经济3.0）理论创新与实践创新平台。
       </div>
+      <div class="school-swiper">
+        <swiper :options="swiperEventOption" ref="eventSwiper">
+          <!-- slides -->
+          <swiper-slide v-for="(slide, index) in eventSlides" :key="index">
+            <ul>
+              <li class="li1">
+                <img :src="slide.img" alt />
+              </li>
+            </ul>
+          </swiper-slide>
+        </swiper>
+        <!-- Optional controls -->
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import "swiper/dist/css/swiper.css";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+
+export default {
+  components: {
+    swiper,
+    swiperSlide
+  },
+  data() {
+    return {
+      eventSlides: [
+        {
+          img: require("../assets/schoolslider.jpg"),
+          href: "/"
+        },
+        {
+          img: require("../assets/schoolslider.jpg"),
+          href: "/"
+        },
+        {
+          img: require("../assets/schoolslider.jpg"),
+          href: "/"
+        }
+      ],
+      swiperEventOption: {
+        loop: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 300,
+          modifier: 1,
+          slideShadows: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      }
+    };
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -306,6 +365,55 @@ export default {};
       text-align: center;
       color: #747474;
       line-height: 2;
+    }
+    .school-swiper {
+      width: 1200px;
+      margin: 0 auto;
+      padding: 80px 50px 100px 50px;
+      position: relative;
+      .swiper-slide {
+        width: 687px;
+        ul {
+          li.li1 {
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+          li.li2 {
+            display: none;
+          }
+        }
+      }
+      .swiper-slide-prev,
+      .swiper-slide-next {
+        width: 687px;
+        height: 338px;
+        overflow: hidden;
+        margin-bottom: -100px;
+      }
+      .swiper-slide-active {
+        ul {
+          li.li2 {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+      .swiper-container-3d .swiper-slide-shadow-left {
+        background-image: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0)
+        );
+      }
+      .swiper-container-3d .swiper-slide-shadow-right {
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0)
+        );
+      }
     }
   }
 }

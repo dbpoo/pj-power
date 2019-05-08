@@ -46,6 +46,14 @@ export default {
       this.$get("wp/v2/posts").then(res => {
         this.newList = res;
       });
+    },
+    toDetail(id) {
+      this.$router.push({
+        path: "detail",
+        query: {
+          id: id
+        }
+      });
     }
   },
   mounted() {
