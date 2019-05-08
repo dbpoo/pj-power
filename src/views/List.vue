@@ -25,7 +25,7 @@
             </h2>
             <p v-html="item.excerpt.rendered"></p>
           </li>
-          <li class="li2">{{ item.date }}</li>
+          <li class="li2">{{ getYMD(item.date) }}</li>
         </ul>
         <span class="arrow"></span>
       </div>
@@ -46,6 +46,10 @@ export default {
       this.$get("wp/v2/posts").then(res => {
         this.newList = res;
       });
+    },
+    getYMD(time) {
+      let t = time.split("T")[0];
+      return t;
     },
     toDetail(id) {
       this.$router.push({
@@ -105,7 +109,7 @@ export default {
       }
       ul {
         padding: 15px 0;
-        padding-right: 180px;
+        padding-right: 100px;
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
