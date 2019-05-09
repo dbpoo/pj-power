@@ -120,7 +120,6 @@ export default {};
 @media screen and (max-width: 640px) {
   .solutions .banner {
     height: 340px;
-    padding-bottom: 50px;
   }
   .solutions .banner h2 {
     width: 100%;

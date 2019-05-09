@@ -423,7 +423,6 @@ export default {
   .school-wrapper {
     .banner {
       height: 340px;
-      padding-bottom: 50px;
       h2 {
         width: 100%;
         font-size: 20px;

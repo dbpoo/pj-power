@@ -112,7 +112,6 @@ export default {
 @media screen and (max-width: 640px) {
   .detail .banner {
     height: 200px;
-    padding-bottom: 50px;
   }
   .detail .banner h2 {
     width: 100%;
