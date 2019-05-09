@@ -5,13 +5,17 @@
         <div class="nav-logo">
           <router-link to="/">logo</router-link>
         </div>
-        <div class="nav-link">
-          <router-link to="/">首页</router-link>
-          <router-link to="/solutions">解决方案</router-link>
-          <router-link to="/download">交易平台</router-link>
-          <router-link to="/school">新能研究院</router-link>
-          <router-link to="/list">新闻动态</router-link>
-          <router-link to="/about">关于我们</router-link>
+        <div class="nav-swith">
+          <span class="swith-on" v-show="!isShow" @click="toggleMenu"></span>
+          <span class="swith-off" v-show="isShow" @click="toggleMenu"></span>
+        </div>
+        <div class="nav-link" v-show="isShow">
+          <a
+            v-for="(item,index) in nav"
+            :key="index"
+            @click="goto(item.path,index)"
+            :class="index==curindex? 'active' : '' "
+          >{{item.name}}</a>
         </div>
       </div>
     </div>
@@ -54,25 +58,69 @@
 export default {
   data() {
     return {
-      isShow: true,
-      screenWidth: document.body.clientWidth // 屏幕尺寸
+      isShow: false,
+      curindex: -1,
+      screenWidth: document.body.clientWidth,
+      nav: [
+        {
+          path: "home",
+          name: "首页"
+        },
+        {
+          path: "solutions",
+          name: "解决方案"
+        },
+        {
+          path: "download",
+          name: "交易平台"
+        },
+        {
+          path: "school",
+          name: "新能研究院"
+        },
+        {
+          path: "list",
+          name: "新闻动态"
+        },
+        {
+          path: "about",
+          name: "关于我们"
+        }
+      ]
     };
   },
   methods: {
     toggleMenu() {
       this.isShow = !this.isShow;
+    },
+    goto(path, index) {
+      this.curindex = index;
+      if (this.screenWidth < 768) {
+        this.isShow = false;
+      }
+      this.$router.push({ name: path });
     }
   },
   watch: {
-    $route(to, from) {
-      if (this.screenWidth < 768) {
+    screenWidth(val) {
+      if (val < 768) {
         this.isShow = false;
+      } else {
+        this.isShow = true;
       }
     }
   },
   mounted() {
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        that.screenWidth = document.body.clientWidth;
+      })();
+    };
     if (this.screenWidth < 768) {
       this.isShow = false;
+    } else {
+      this.isShow = true;
     }
   }
 };
@@ -89,6 +137,7 @@ export default {
   z-index: 9999;
   top: 0;
   left: 0;
+  position: fixed;
   .nav-flex {
     max-width: 1200px;
     margin: 0 auto;
@@ -104,11 +153,29 @@ export default {
         text-indent: -9999px;
       }
     }
+    .nav-swith {
+      width: 77px;
+      height: 77px;
+      display: none;
+      .swith-on {
+        width: 77px;
+        height: 77px;
+        display: block;
+        background: url("./assets/switch.png") center center no-repeat;
+      }
+      .swith-off {
+        width: 77px;
+        height: 77px;
+        display: block;
+        background: url("./assets/close.png") center center no-repeat;
+      }
+    }
     .nav-link {
       a {
         margin: 0 20px;
         color: #fff;
         font-weight: bold;
+        cursor: pointer;
         &:hover {
           color: #29acf1;
         }
@@ -116,7 +183,7 @@ export default {
           margin-right: 0;
         }
       }
-      a.router-link-exact-active {
+      a.active {
         font-weight: bold;
         color: #29acf1;
       }
@@ -186,7 +253,30 @@ export default {
 
 @media screen and (max-width: 640px) {
   .nav {
-    display: none;
+    .nav-logo {
+      margin-left: 10px;
+    }
+    .nav-flex {
+      .nav-swith {
+        display: block;
+      }
+      .nav-link {
+        position: absolute;
+        top: 77px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        a {
+          margin: 0;
+          padding: 0 20px;
+          height: 60px;
+          line-height: 60px;
+        }
+      }
+    }
   }
   .flink {
     padding: 0;
