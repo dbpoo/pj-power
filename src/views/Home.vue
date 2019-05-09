@@ -1,17 +1,10 @@
 <template>
   <div class="home">
     <div class="banner-swiper">
-      <swiper
-        :options="swiperOption"
-        ref="bannerSwiper"
-        v-if="bannerSlides.length > 0"
-      >
+      <swiper :options="swiperOption" ref="bannerSwiper" v-if="bannerSlides.length > 0">
         <!-- slides -->
         <swiper-slide v-for="(slide, index) in bannerSlides" :key="index">
-          <div
-            :style="{ backgroundImage: 'url(' + slide + ')' }"
-            class="slide-img"
-          ></div>
+          <div :style="{ backgroundImage: 'url(' + slide + ')' }" class="slide-img"></div>
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -23,7 +16,11 @@
       </div>
     </div>
     <div class="col-1">
-      <div class="tit"><span><i>新能源资产价值流通服务</i></span></div>
+      <div class="tit">
+        <span>
+          <i>新能源资产价值流通服务</i>
+        </span>
+      </div>
       <div class="con">
         <div class="point point-1"></div>
         <div class="point point-2"></div>
@@ -35,8 +32,14 @@
       </div>
     </div>
     <div class="col-5">
-      <div class="tit"><span><i>新闻动态</i></span></div>
-      <div class="more"><router-link to="/list">更多新闻》</router-link></div>
+      <div class="tit">
+        <span>
+          <i>新闻动态</i>
+        </span>
+      </div>
+      <div class="more">
+        <router-link to="/list">更多新闻》</router-link>
+      </div>
       <div class="news">
         <div class="news-c" v-if="newList.length > 0">
           <div class="newsc-img">
@@ -50,15 +53,11 @@
                         : 'http://www.xinnengboan.com/assets/img/default.jpg'
                     "
                     alt
-                  />
+                  >
                 </a>
               </li>
               <li>
-                <a
-                  href="javascript:;"
-                  @click="toDetail(newTop.id)"
-                  v-html="newTop.tit"
-                ></a>
+                <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
               </li>
             </ul>
           </div>
@@ -70,11 +69,7 @@
               </dl>
               <ul>
                 <li class="li1">
-                  <a
-                    href="javascript:;"
-                    @click="toDetail(item.id)"
-                    v-html="item.title.rendered"
-                  ></a>
+                  <a href="javascript:;" @click="toDetail(item.id)" v-html="item.title.rendered"></a>
                 </li>
                 <li class="li2" v-html="item.excerpt.rendered"></li>
               </ul>
@@ -84,31 +79,38 @@
       </div>
     </div>
     <div class="col-2">
-      <div class="tit"><span><i>“阳光照见爱”我们在行动</i></span></div>
+      <div class="tit">
+        <span>
+          <i>“阳光照见爱”我们在行动</i>
+        </span>
+      </div>
       <div class="con">
-        <a
-          class="light"
-          :class="'light-' + item"
-          v-for="(item, index) in lightArr"
-          :key="index"
-        >
+        <a class="light" :class="'light-' + item" v-for="(item, index) in lightArr" :key="index">
           <span class="sp1"></span>
           <span class="sp2"></span>
         </a>
       </div>
     </div>
     <div class="col-3">
-      <div class="tit"><span><i>项目展示</i></span></div>
+      <div class="tit">
+        <span>
+          <i>项目展示</i>
+        </span>
+      </div>
       <div class="con">
         <ul>
           <li v-for="(item, index) in cardList" :key="index" class="hvr-grow">
-            <img :src="item.img" alt srcset />
+            <img :src="item.img" alt srcset>
           </li>
         </ul>
       </div>
     </div>
     <div class="col-4">
-      <div class="tit"><span><i>活动信息</i></span></div>
+      <div class="tit">
+        <span>
+          <i>活动信息</i>
+        </span>
+      </div>
       <div class="event">
         <div class="event-c">
           <swiper :options="swiperEventOption" ref="eventSwiper">
@@ -116,7 +118,7 @@
             <swiper-slide v-for="(slide, index) in eventSlides" :key="index">
               <ul>
                 <li class="li1">
-                  <img :src="slide.img" alt />
+                  <img :src="slide.img" alt>
                 </li>
               </ul>
             </swiper-slide>
@@ -266,7 +268,6 @@ export default {
 .home {
   min-width: 1200px;
   .banner-swiper {
-    height: 900px;
     position: relative;
     .slide-img {
       width: 100%;
@@ -274,6 +275,7 @@ export default {
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
+      background-size: cover;
     }
     .swiper-pagination {
       bottom: 33px;
@@ -305,12 +307,15 @@ export default {
       }
       a.btn-1 {
         background: url("../assets/bannercv_1.png") 0 0 no-repeat;
+        background-size: contain;
       }
       a.btn-2 {
         background: url("../assets/bannercv_2.png") 0 0 no-repeat;
+        background-size: contain;
       }
       a.btn-3 {
         background: url("../assets/bannercv_3.png") 0 0 no-repeat;
+        background-size: contain;
       }
     }
   }
@@ -660,6 +665,21 @@ export default {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .home .banner-swiper .slide-img {
+    height: 700px;
+  }
+  .home .banner-swiper .banner-btn {
+    width: 900px;
+    margin-left: -450px;
+    bottom: 120px;
+  }
+  .home .banner-swiper .banner-btn a {
+    width: 250px;
+    height: 179px;
   }
 }
 </style>
