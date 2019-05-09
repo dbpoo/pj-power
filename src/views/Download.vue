@@ -174,10 +174,11 @@ export default {
 @media screen and (max-width: 640px) {
   .download-wrapper .banner {
     height: 340px;
+    padding-bottom: 50px;
   }
   .download-wrapper .banner h2 {
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
   }
   .download-wrapper .banner .download-btn a {
     width: 200px;
@@ -193,6 +194,7 @@ export default {
       padding: 0 30px;
       p {
         font-size: 18px;
+        text-indent: 2rem;
       }
     }
   }

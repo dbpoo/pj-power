@@ -4,7 +4,12 @@
       <swiper :options="swiperOption" ref="bannerSwiper" v-if="bannerSlides.length > 0">
         <!-- slides -->
         <swiper-slide v-for="(slide, index) in bannerSlides" :key="index">
-          <div :style="{ backgroundImage: 'url(' + slide + ')' }" class="slide-img"></div>
+          <div :style="{ backgroundImage: 'url(' + slide.img + ')' }" class="slide-img">
+            <div class="slide-info">
+              <h2>{{slide.txt1}}</h2>
+              <h2>{{slide.txt2}}</h2>
+            </div>
+          </div>
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -188,7 +193,18 @@ export default {
           href: "/"
         }
       ],
-      bannerSlides: [],
+      bannerSlides: [
+        {
+          img: require("../assets/banner_1.jpg"),
+          txt1: "促进全球新能源数权治理",
+          txt2: "推动新能源数权经济发展"
+        },
+        {
+          img: require("../assets/banner_2.jpg"),
+          txt1: "新能源资产上链、发行、清结算",
+          txt2: "系统解决方案提供商"
+        }
+      ],
       swiperOption: {
         autoplay: true,
         loop: true,
@@ -257,7 +273,7 @@ export default {
     }
   },
   mounted() {
-    this.getBannerSlider();
+    // this.getBannerSlider();
     this.getNewsList();
   }
 };
@@ -271,10 +287,20 @@ export default {
     .slide-img {
       width: 100%;
       height: 900px;
+      padding-bottom: 160px;
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
       background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .slide-info {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 15px;
+      }
     }
     .swiper-pagination {
       bottom: 33px;
@@ -303,6 +329,7 @@ export default {
         width: 357px;
         height: 256px;
         display: block;
+        margin: 0 20px;
       }
       a.btn-1 {
         background: url("../assets/bannercv_1.png") 0 0 no-repeat;

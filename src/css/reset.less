@@ -182,6 +182,24 @@ a {
   display: inline-block;
 }
 
+
+
+html::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: #ededed;
+}
+html::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: #ededed;
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  width: 17px;
+  height: 17px;
+  background-color: #535353;
+}
+
 .tit {
   width: 100%;
   text-align: center;
@@ -200,18 +218,12 @@ a {
   }
 }
 
-html::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-  background-color: #ededed;
-}
-html::-webkit-scrollbar-track {
-  border-radius: 0;
-  background-color: #ededed;
-}
-html::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  width: 17px;
-  height: 17px;
-  background-color: #535353;
+@media screen and (max-width: 640px) {
+  .tit {
+    span {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
 }

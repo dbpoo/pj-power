@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <div class="banner">
-      <h2>新能源资产上链、发行、清结算<br>系统解决方案提供商</h2>
+      <h2>新闻动态</h2>
     </div>
     <div class="news">
       <div class="news-nav">
@@ -50,9 +50,9 @@ export default {
 <style lang="less">
 .detail {
   .banner {
-    height: 396px;
+    height: 473px;
     padding-top: 77px;
-    background: url("../assets/cbanner.jpg") center 0 no-repeat;
+    background: url("../assets/cbanner_list.jpg") center 0 no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +103,38 @@ export default {
         figcaption {
           font-size: 14px;
           color: rgb(128, 128, 128);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .detail .banner {
+    height: 200px;
+    padding-bottom: 50px;
+  }
+  .detail .banner h2 {
+    width: 100%;
+    font-size: 20px;
+  }
+  .detail .news {
+    padding-top: 0;
+    .news-nav {
+      display: none;
+    }
+    .news-tit {
+      font-size: 28px;
+      padding: 20px;
+      margin-bottom: 0;
+      text-align: left;
+      border-bottom: 1px solid #d1d1d1;
+    }
+    .news-con {
+      padding: 20px;
+      figure{
+        img {
+          width: 100%;
         }
       }
     }

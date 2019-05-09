@@ -120,10 +120,11 @@ export default {};
 @media screen and (max-width: 640px) {
   .solutions .banner {
     height: 340px;
+    padding-bottom: 50px;
   }
   .solutions .banner h2 {
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
   }
   .solutions .solution-flex {
     display: none;

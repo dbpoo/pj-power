@@ -290,6 +290,31 @@ export default {
   }
   .flink .flink-flex ul.ul1 {
     padding-bottom: 10px;
+    li{
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    li.li2 {
+      padding-left: 30px;
+      background-size: 20px 20px;
+    }
+    li.li3 {
+      padding-left: 30px;
+      background-size: 20px 20px;
+    }
+  }
+  .flink .flink-flex ul.ul2 {
+    li.li1 {
+      font-size: 14px;
+    }
+    li.li2 {
+      font-size: 12px;
+    }
+  }
+  .flink .flink-flex ul.ul3 {
+    li.li1 {
+      font-size: 14px;
+    }
   }
   .copyright {
     font-size: 12px;
