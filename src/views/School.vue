@@ -204,7 +204,7 @@ export default {
       padding-left: 310px;
       color: #747474;
       font-size: 24px;
-      text-indent: 3rem;
+      text-indent: 48px;
       p {
         margin-bottom: 15px;
       }
@@ -287,6 +287,7 @@ export default {
           margin-bottom: 10px;
           font-size: 26px;
           color: #484848;
+          transition: 0s all;
           span {
             width: 120px;
             height: 120px;
@@ -317,6 +318,7 @@ export default {
       }
       ul.ul1 {
         li.li1 span {
+          transition: 0s all;
           background: url("../assets/sicon_1.png") center 0 no-repeat;
         }
         &:hover {
@@ -327,6 +329,7 @@ export default {
       }
       ul.ul2 {
         li.li1 span {
+          transition: 0s all;
           background: url("../assets/sicon_2.png") center 0 no-repeat;
         }
         &:hover {
@@ -337,6 +340,7 @@ export default {
       }
       ul.ul3 {
         li.li1 span {
+          transition: 0s all;
           background: url("../assets/sicon_3.png") center 0 no-repeat;
         }
         &:hover {
@@ -347,6 +351,7 @@ export default {
       }
       ul.ul4 {
         li.li1 span {
+          transition: 0s all;
           background: url("../assets/sicon_4.png") center 0 no-repeat;
         }
         &:hover {
@@ -460,7 +465,12 @@ export default {
             font-size: 12px;
           }
         }
-        ul.ul1, ul.ul2, ul.ul3, ul.ul4, ul.ul5, ul.ul6 {
+        ul.ul1,
+        ul.ul2,
+        ul.ul3,
+        ul.ul4,
+        ul.ul5,
+        ul.ul6 {
           background-size: 80px 69px;
         }
       }
@@ -483,14 +493,23 @@ export default {
             padding: 0 20px;
           }
         }
-        ul.ul1, ul.ul2, ul.ul3, ul.ul4 {
+        ul.ul1,
+        ul.ul2,
+        ul.ul3,
+        ul.ul4 {
           li.li1 span {
             width: 80px;
             height: 80px;
             background-size: 80px 160px;
           }
+          &:hover {
+            li.li1 span {
+              background-position: 0 -80px;
+            }
+          }
         }
-        ul.ul1, ul.ul4 {
+        ul.ul1,
+        ul.ul4 {
           background-color: #fafafa;
         }
       }
