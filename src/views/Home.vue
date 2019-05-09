@@ -19,6 +19,15 @@
         <a href="javascript:;" class="btn-2 hvr-grow"></a>
         <a href="javascript:;" class="btn-3 hvr-grow"></a>
       </div>
+      <div class="banner-btn-m">
+        <div>
+          <a href="javascript:;" class="btn-1 hvr-grow"></a>
+        </div>
+        <div>
+          <a href="javascript:;" class="btn-2 hvr-grow"></a>
+          <a href="javascript:;" class="btn-3 hvr-grow"></a>
+        </div>
+      </div>
     </div>
     <div class="col-1">
       <div class="tit">
@@ -61,7 +70,7 @@
                   >
                 </a>
               </li>
-              <li>
+              <li class="li2">
                 <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
               </li>
             </ul>
@@ -81,6 +90,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="morem">
+        <router-link to="/list"></router-link>
       </div>
     </div>
     <div class="col-2">
@@ -102,12 +114,20 @@
           <i>项目展示</i>
         </span>
       </div>
-      <div class="con">
+      <div class="con" :class="isHide ? 'conhide': ''">
         <ul>
-          <li v-for="(item, index) in cardList" :key="index" class="hvr-grow">
+          <li
+            v-for="(item, index) in cardList"
+            :key="index"
+            class="hvr-grow"
+            :class="'hvr-grow'+index"
+          >
             <img :src="item.img" alt srcset>
           </li>
         </ul>
+      </div>
+      <div class="btn" v-if="isHide">
+        <a @click="proMore"></a>
       </div>
     </div>
     <div class="col-4">
@@ -201,7 +221,7 @@ export default {
         },
         {
           img: require("../assets/banner_2.jpg"),
-          txt1: "新能源资产上链、发行、清结算",
+          txt1: "新能源资产上链、发行",
           txt2: "系统解决方案提供商"
         }
       ],
@@ -229,7 +249,8 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
         }
-      }
+      },
+      isHide: true
     };
   },
   components: {
@@ -237,6 +258,9 @@ export default {
     swiperSlide
   },
   methods: {
+    proMore() {
+      this.isHide = false;
+    },
     getYM(time) {
       let arr = time.split("T")[0].split("-");
       return arr[0] + "-" + arr[1];
@@ -315,7 +339,8 @@ export default {
     .swiper-pagination-bullet-active {
       background: #2fccf6;
     }
-    .banner-btn {
+    .banner-btn,
+    .banner-btn-m {
       max-width: 1200px;
       position: absolute;
       bottom: 90px;
@@ -344,6 +369,9 @@ export default {
         background-size: contain;
       }
     }
+    .banner-btn-m {
+      display: none;
+    }
   }
   .col-1 {
     width: 100%;
@@ -359,27 +387,16 @@ export default {
       position: relative;
       margin: 0 auto 50px auto;
       background: url("../assets/con_1.png") center 0 no-repeat;
+      display: flex;
+      padding: 160px 60px 0 60px;
+      justify-content: space-around;
       .point {
         width: 101px;
         height: 7px;
         overflow: hidden;
-        position: absolute;
-        top: 168px;
         background-image: url("../assets/point.png");
         background-repeat: no-repeat;
         animation: point 1s steps(1) 0s infinite both;
-      }
-      .point-1 {
-        left: 145px;
-      }
-      .point-2 {
-        left: 412px;
-      }
-      .point-3 {
-        left: 685px;
-      }
-      .point-4 {
-        left: 953px;
       }
     }
     .btn {
@@ -533,10 +550,23 @@ export default {
         li {
           width: 357px;
           height: 466px;
-          overflow: hidden;
           margin-bottom: 70px;
-          box-shadow: 5px 5px 8px 1px rgba(102, 102, 102, 0.5);
+          img {
+            box-shadow: 5px 5px 8px 1px rgba(102, 102, 102, 0.5);
+          }
         }
+      }
+    }
+    .btn {
+      display: none;
+      text-align: center;
+      a {
+        width: 250px;
+        height: 38px;
+        background: url("../assets/morem2.png") center 0 no-repeat;
+        background-size: contain;
+        display: none;
+        display: inline-block;
       }
     }
   }
@@ -610,6 +640,18 @@ export default {
       text-align: right;
       padding-top: 20px;
       font-size: 20px;
+    }
+    .morem {
+      display: none;
+      text-align: center;
+      a {
+        width: 250px;
+        height: 38px;
+        background: url("../assets/morem.png") center 0 no-repeat;
+        background-size: contain;
+        display: none;
+        display: inline-block;
+      }
     }
     .news {
       max-width: 1200px;
@@ -694,6 +736,27 @@ export default {
   }
 }
 
+@keyframes point {
+  17% {
+    background-position: 0 0;
+  }
+  34% {
+    background-position: 0 -7px;
+  }
+  51% {
+    background-position: 0 -14px;
+  }
+  68% {
+    background-position: 0 -21px;
+  }
+  85% {
+    background-position: 0 -28px;
+  }
+  100% {
+    background-position: 0 -35px;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .home .banner-swiper .slide-img {
     height: 700px;
@@ -706,6 +769,283 @@ export default {
   .home .banner-swiper .banner-btn a {
     width: 250px;
     height: 179px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home .banner-swiper .banner-btn {
+    display: none;
+  }
+  .home .banner-swiper .banner-btn-m {
+    width: 100%;
+    margin-left: 0;
+    bottom: 80px;
+    left: 0;
+    display: block;
+
+    div {
+      display: flex;
+      justify-content: center;
+    }
+    a {
+      width: 40%;
+      height: 140px;
+    }
+  }
+  .home .banner-swiper .slide-img .slide-info {
+    font-size: 12px;
+    letter-spacing: 8px;
+  }
+  .home .col-1 {
+    height: auto;
+    padding: 20px 20px 40px 20px;
+    .tit {
+      margin-bottom: 20px;
+    }
+    .con {
+      height: 100px;
+      background-size: contain;
+      padding: 50px 20px 0 20px;
+      margin-bottom: 30px;
+      .point {
+        width: 29px;
+        height: 2px;
+        background-size: 29px 12px;
+      }
+    }
+    .btn {
+      a {
+        width: 200x;
+        height: 45px;
+        background-size: contain;
+      }
+    }
+  }
+  .home .col-5 {
+    height: auto;
+    padding: 20px 0 20px 0;
+    .tit {
+      margin-bottom: 20px;
+    }
+    .more {
+      display: none;
+    }
+    .morem {
+      display: block;
+    }
+    .news {
+      margin-bottom: 20px;
+      .news-c {
+        flex-direction: column;
+        .newsc-img {
+          width: auto;
+          position: relative;
+          ul {
+            li {
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+            li.li2 {
+              position: absolute;
+              width: 100%;
+              left: 0;
+              bottom: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              padding: 0 20px;
+              a {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                overflow: hidden;
+                display: inline-block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .newsc-list {
+          width: 100%;
+          .item {
+            height: auto;
+            padding: 10px 20px 10px 20px;
+            border-bottom: 1px solid #d1d1d1;
+            dl {
+              width: 50px;
+              margin-right: 20px;
+              flex: 0 0 auto;
+              dd.dd1 {
+                font-size: 40px;
+              }
+              dd.dd2 {
+                font-size: 12px;
+              }
+            }
+            ul {
+              li.li1 {
+                margin-bottom: 5px;
+                font-size: 18px;
+              }
+              li.li2 {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .home .col-2 {
+    height: 500px;
+    padding: 0;
+    background: url("../assets/mapmbg.jpg") center 0 no-repeat;
+    background-size: cover;
+    .tit {
+      margin-bottom: 20px;
+    }
+    .con {
+      .light {
+        width: 40px;
+        height: 40px;
+        span.sp1 {
+          width: 40px;
+          height: 40px;
+          background-size: contain;
+        }
+      }
+      .light-100 {
+        top: 70px;
+        left: auto;
+        right: 30px;
+        span.sp2 {
+          width: 200px;
+          height: 117px;
+          right: 30px;
+          top: -30px;
+          background-size: contain;
+        }
+      }
+      .light-60 {
+        top: 120px;
+        left: auto;
+        right: 100px;
+        span.sp2 {
+          width: 200px;
+          height: 144px;
+          right: 30px;
+          top: -30px;
+          background-size: contain;
+        }
+      }
+      .light-150 {
+        top: 200px;
+        left: 180px;
+        span.sp2 {
+          width: 200px;
+          height: 120px;
+          right: 30px;
+          bottom: 30px;
+          background-size: contain;
+        }
+      }
+      .light-75 {
+        top: 260px;
+        left: 210px;
+        span.sp2 {
+          width: 200px;
+          height: 123px;
+          left: 30px;
+          bottom: 30px;
+
+          background-size: contain;
+        }
+      }
+      .light-120 {
+        top: 280px;
+        left: 150px;
+        span.sp2 {
+          width: 200px;
+          height: 119px;
+          right: 30px;
+          bottom: 30px;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  .home .col-3 {
+    height: auto;
+    padding: 20px 10px 40px 10px;
+    .tit {
+      margin-bottom: 20px;
+    }
+    .con {
+      ul {
+        li {
+          width: 50%;
+          height: auto;
+          margin-bottom: 0px;
+          padding: 0 10px 20px 10px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .conhide {
+      .hvr-grow2,
+      .hvr-grow3,
+      .hvr-grow4,
+      .hvr-grow5 {
+        display: none;
+      }
+    }
+    .btn {
+      display: block;
+    }
+  }
+  .home .col-4 {
+    height: auto;
+    padding: 20px 10px 40px 10px;
+    .tit {
+      margin-bottom: 20px;
+    }
+    .event {
+      .event-c {
+        padding-top: 0;
+        .swiper-slide {
+          width: 300px;
+          height: auto;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes point {
+    17% {
+      background-position: 0 0;
+    }
+    34% {
+      background-position: 0 -2px;
+    }
+    51% {
+      background-position: 0 -4px;
+    }
+    68% {
+      background-position: 0 -6px;
+    }
+    85% {
+      background-position: 0 -8px;
+    }
+    100% {
+      background-position: 0 -10px;
+    }
   }
 }
 </style>
