@@ -1,7 +1,10 @@
 <template>
   <div class="solutions">
     <div class="banner">
-      <h2>新能源资产上链、发行、清结算<br>系统解决方案提供商</h2>
+      <h2>
+        新能源资产上链、发行、清结算
+        <br>系统解决方案提供商
+      </h2>
     </div>
     <div class="solutions-1">
       <div class="solution-flex">
@@ -63,9 +66,17 @@ export default {};
     display: flex;
     justify-content: space-between;
     align-items: center;
+    img.sohover {
+      display: inline-block;
+      vertical-align: middle;
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      transition-duration: 0.5s;
+    }
     &:hover {
       img.sohover {
-        animation: zoom 0.5s forwards;
+        transform: scale(1.2);
+        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
       }
     }
   }
