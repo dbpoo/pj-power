@@ -174,7 +174,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .school-wrapper {
   .banner {
     height: 473px;

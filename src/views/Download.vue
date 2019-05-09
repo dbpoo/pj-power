@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .download-wrapper {
   .banner {
     height: 473px;

@@ -5,9 +5,15 @@
         新能源资产上链、发行、清结算<br>系统解决方案提供商
       </h2>
     </div>
-    <div class="about-1"></div>
-    <div class="about-2"></div>
-    <div class="about-3"></div>
+    <div class="about-1">
+      <img src="../assets/about_1m.jpg" alt="">
+    </div>
+    <div class="about-2">
+      <img src="../assets/about_2m.jpg" alt="">
+    </div>
+    <div class="about-3">
+      <img src="../assets/about_3m.jpg" alt="">
+    </div>
   </div>
 </template>
 
@@ -42,6 +48,24 @@ export default {};
   .about-3 {
     height: 695px;
     background: url("../assets/about_3.jpg") center 0 no-repeat;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .about .banner {
+    height: 340px;
+  }
+  .about .banner h2 {
+    width: 100%;
+    font-size: 24px;
+  }
+  .about .about-1, .about .about-2, .about .about-3 {
+    width: 100%;
+    height: auto;
+    background: none;
+    img {
+      width: 100%;
+    }
   }
 }
 </style>

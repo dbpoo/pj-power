@@ -5,7 +5,9 @@
     </div>
     <div class="list">
       <div class="tit">
-        <span><i>新闻资讯</i></span>
+        <span>
+          <i>新闻资讯</i>
+        </span>
       </div>
       <div class="item" v-for="(item, index) in newList" :key="index">
         <div class="item-img">
@@ -15,12 +17,13 @@
                 ? item.better_featured_image.source_url
                 : 'http://www.xinnengboan.com/upload/default.jpg'
             "
-            alt=""
-          />
+            alt
+          >
         </div>
         <ul>
           <li class="li1">
             <h2>
+              <span>[{{ getMD(item.date) }}]</span>
               <a @click="toDetail(item.id)" v-html="item.title.rendered"></a>
             </h2>
             <p v-html="item.excerpt.rendered"></p>
@@ -42,6 +45,10 @@ export default {
     };
   },
   methods: {
+    getMD(time) {
+      let arr = time.split("T")[0].split("-");
+      return arr[1] + "-" + arr[2];
+    },
     getNewsList() {
       this.$get("wp/v2/posts").then(res => {
         this.newList = res;
@@ -66,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .list-wrapper {
   .banner {
     height: 473px;
@@ -113,9 +120,12 @@ export default {
         flex-wrap: wrap;
         align-content: space-between;
         li.li1 {
+          span {
+            display: none;
+          }
           h2 {
             font-size: 24px;
-              margin-bottom: 10px;
+            margin-bottom: 10px;
             a {
               color: #585858;
             }
@@ -153,6 +163,75 @@ export default {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .list-wrapper .banner {
+    height: 340px;
+  }
+  .list-wrapper .banner h2 {
+    width: 100%;
+    font-size: 34px;
+  }
+  .list-wrapper .list {
+    padding: 0;
+    background: none;
+    .tit {
+      display: none;
+    }
+    .item {
+      margin-bottom: 0;
+      box-shadow: none;
+      .item-img {
+        display: none;
+      }
+      &:nth-of-type(odd) {
+        background: #f6f6f6;
+      }
+    }
+  }
+  .list-wrapper .list .item ul {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 20px;
+  }
+  .list-wrapper .list .item ul li{
+    width: 100%;
+  }
+  .list-wrapper .list .item ul li.li1 span {
+    display: block;
+    color: #29acf1;
+  }
+  .list-wrapper .list .item ul li.li1 h2 {
+    display: flex;
+    font-size: 20px;
+    span {
+      margin-right: 10px;
+      flex: 0 0 auto;
+    }
+    a {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #29acf1;
+    }
+  }
+  .list-wrapper .list .item ul li.li1 p {
+    font-size: 12px;
+  }
+  .list-wrapper .list .item ul li.li2 {
+    display: none;
+  }
+  .list-wrapper .list .item span.arrow {
+    top: 20px;
+    right: 10px;
+    bottom: auto;
+    background: url("../assets/arrowhover.png") 0 0 no-repeat;
   }
 }
 </style>
