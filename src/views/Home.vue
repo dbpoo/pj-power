@@ -102,9 +102,15 @@
         </span>
       </div>
       <div class="con">
-        <a class="light" :class="'light-' + item" v-for="(item, index) in lightArr" :key="index">
+        <a
+          class="light"
+          :class="'light-' + item"
+          v-for="(item, index) in lightArr"
+          :key="index"
+          @click="lightClick(index)"
+        >
           <span class="sp1"></span>
-          <span class="sp2"></span>
+          <span class="sp2" :class="curIndex == index ? 'on' : ''"></span>
         </a>
       </div>
     </div>
@@ -166,6 +172,7 @@ export default {
   name: "home",
   data() {
     return {
+      curIndex: _.random(0, 4),
       lightArr: [100, 60, 150, 75, 120],
       newList: [],
       newTop: {
@@ -258,6 +265,9 @@ export default {
     swiperSlide
   },
   methods: {
+    lightClick(index) {
+      this.curIndex = index;
+    },
     proMore() {
       this.isHide = false;
     },
@@ -447,11 +457,9 @@ export default {
           z-index: 99;
           background: url("../assets/map_100.png") 0 0 no-repeat;
         }
-        &:hover {
-          span.sp2 {
-            animation: zoomIn 0.2s;
-            display: block;
-          }
+        span.on {
+          animation: zoomIn 0.2s;
+          display: block;
         }
       }
       .light-60 {
@@ -466,11 +474,9 @@ export default {
           top: -50px;
           background: url("../assets/map_60.png") 0 0 no-repeat;
         }
-        &:hover {
-          span.sp2 {
-            animation: zoomIn 0.2s;
-            display: block;
-          }
+        span.on {
+          animation: zoomIn 0.2s;
+          display: block;
         }
       }
       .light-150 {
@@ -485,11 +491,9 @@ export default {
           bottom: 50px;
           background: url("../assets/map_150.png") 0 0 no-repeat;
         }
-        &:hover {
-          span.sp2 {
-            animation: zoomIn 0.2s;
-            display: block;
-          }
+        span.on {
+          animation: zoomIn 0.2s;
+          display: block;
         }
       }
       .light-75 {
@@ -504,11 +508,9 @@ export default {
           bottom: 50px;
           background: url("../assets/map_75.png") 0 0 no-repeat;
         }
-        &:hover {
-          span.sp2 {
-            animation: zoomIn 0.2s;
-            display: block;
-          }
+        span.on {
+          animation: zoomIn 0.2s;
+          display: block;
         }
       }
       .light-120 {
@@ -523,11 +525,9 @@ export default {
           bottom: 50px;
           background: url("../assets/map_120.png") 0 0 no-repeat;
         }
-        &:hover {
-          span.sp2 {
-            animation: zoomIn 0.2s;
-            display: block;
-          }
+        span.on {
+          animation: zoomIn 0.2s;
+          display: block;
         }
       }
     }
@@ -941,7 +941,7 @@ export default {
         }
       }
       .light-150 {
-        top: 200px;
+        top: 230px;
         left: 180px;
         span.sp2 {
           width: 200px;
