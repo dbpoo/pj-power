@@ -49,7 +49,6 @@ export default {
 
 <style lang="less">
 .detail {
-  min-width: 1200px;
   .banner {
     height: 396px;
     padding-top: 77px;
@@ -65,7 +64,7 @@ export default {
     }
   }
   .news {
-    width: 1200px;
+    max-width: 1200px;
     padding-top: 68px;
     margin: 0 auto;
     .news-nav {

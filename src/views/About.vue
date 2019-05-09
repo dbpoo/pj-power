@@ -17,7 +17,6 @@ export default {};
 
 <style lang="less">
 .about {
-  min-width: 1200px;
   .banner {
     height: 396px;
     padding-top: 77px;

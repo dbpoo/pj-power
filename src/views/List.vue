@@ -68,7 +68,6 @@ export default {
 
 <style lang="less" scoped>
 .list-wrapper {
-  min-width: 1200px;
   .banner {
     height: 473px;
     padding-top: 77px;
@@ -84,7 +83,7 @@ export default {
     }
   }
   .list {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 200px;

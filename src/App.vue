@@ -5,11 +5,7 @@
         <div class="nav-logo">
           <router-link to="/">logo</router-link>
         </div>
-        <div class="nav-swith">
-          <span class="swith-on" v-show="!isShow" @click="toggleMenu"></span>
-          <span class="swith-off" v-show="isShow" @click="toggleMenu"></span>
-        </div>
-        <div class="nav-link" v-show="isShow">
+        <div class="nav-link">
           <router-link to="/">首页</router-link>
           <router-link to="/solutions">解决方案</router-link>
           <router-link to="/download">交易平台</router-link>
@@ -48,7 +44,9 @@
         </ul>
       </div>
     </div>
-    <div class="copyright"><span>Copyright © 国研新能科技有限公司 版权所有 备案号 京ICP备19014207号</span></div>
+    <div class="copyright">
+      <span>Copyright © 国研新能科技有限公司 版权所有 备案号 京ICP备19014207号</span>
+    </div>
   </div>
 </template>
 
@@ -92,7 +90,7 @@ export default {
   top: 0;
   left: 0;
   .nav-flex {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -129,7 +127,7 @@ export default {
   padding: 35px 0;
   background-color: #3a3434;
   .flink-flex {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -184,5 +182,27 @@ export default {
 }
 .wrapper {
   min-height: 77px;
+}
+
+@media screen and (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+  .flink {
+    padding: 0;
+  }
+  .flink .flink-flex {
+    flex-direction: column;
+  }
+  .flink .flink-flex ul {
+    padding: 20px;
+    border-top: 1px solid #777777;
+  }
+  .flink .flink-flex ul.ul1 {
+    padding-bottom: 10px;
+  }
+  .copyright {
+    font-size: 12px;
+  }
 }
 </style>

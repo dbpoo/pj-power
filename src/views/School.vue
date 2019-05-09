@@ -176,7 +176,6 @@ export default {
 
 <style lang="less" scoped>
 .school-wrapper {
-  min-width: 1200px;
   .banner {
     height: 473px;
     padding-top: 77px;
@@ -196,7 +195,7 @@ export default {
     background: url("../assets/schoolbg_1.jpg") center 0 no-repeat;
     padding-top: 60px;
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       padding-left: 310px;
       color: #747474;
@@ -211,7 +210,7 @@ export default {
     height: 1237px;
     background: url("../assets/schoolbg_2.jpg") center 0 no-repeat;
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -268,7 +267,7 @@ export default {
     height: 856px;
     padding-top: 45px;
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -359,14 +358,14 @@ export default {
     padding-top: 60px;
     background: url("../assets/schoolbg_3.jpg") center 0 no-repeat;
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       font-size: 24px;
       color: #747474;
       line-height: 1.6;
     }
     .school-swiper {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 80px 50px 100px 50px;
       position: relative;

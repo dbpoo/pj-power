@@ -11,11 +11,17 @@
         <img src="../assets/solutions_1.jpg" alt class="sotxt">
         <img src="../assets/solutions_1s.jpg" alt class="sohover">
       </div>
+      <div class="solution-m">
+        <img src="../assets/solutions_1m.jpg" alt="">
+      </div>
     </div>
     <div class="solutions-2">
       <div class="solution-flex">
         <img src="../assets/solutions_2s.jpg" alt class="sohover">
         <img src="../assets/solutions_2.jpg" alt class="sotxt">
+      </div>
+      <div class="solution-m">
+        <img src="../assets/solutions_2m.jpg" alt="">
       </div>
     </div>
     <div class="solutions-3">
@@ -23,17 +29,26 @@
         <img src="../assets/solutions_3.jpg" alt class="sotxt">
         <img src="../assets/solutions_3s.jpg" alt class="sohover">
       </div>
+      <div class="solution-m">
+        <img src="../assets/solutions_3m.jpg" alt="">
+      </div>
     </div>
     <div class="solutions-4">
       <div class="solution-flex">
         <img src="../assets/solutions_4s.jpg" alt class="sohover">
         <img src="../assets/solutions_4.jpg" alt class="sotxt">
       </div>
+      <div class="solution-m">
+        <img src="../assets/solutions_4m.jpg" alt="">
+      </div>
     </div>
     <div class="solutions-5">
       <div class="solution-flex">
         <img src="../assets/solutions_5.jpg" alt class="sotxt">
         <img src="../assets/solutions_5s.jpg" alt class="sohover">
+      </div>
+      <div class="solution-m">
+        <img src="../assets/solutions_5m.jpg" alt="">
       </div>
     </div>
   </div>
@@ -45,7 +60,6 @@ export default {};
 
 <style lang="less">
 .solutions {
-  min-width: 1200px;
   .banner {
     height: 396px;
     background: url("../assets/cbanner_solutions.jpg") center 0 no-repeat;
@@ -60,7 +74,7 @@ export default {};
     }
   }
   .solution-flex {
-    width: 1200px;
+    max-width: 1200px;
     height: 436px;
     margin: 0 auto;
     display: flex;
@@ -80,25 +94,42 @@ export default {};
       }
     }
   }
+  .solution-m {
+    display: none;
+    img {
+      width: 100%;
+    }
+  }
   .solutions-1 {
-    height: 437px;
     background-color: #fff;
   }
   .solutions-2 {
-    height: 437px;
     background-color: #f9f9f9;
   }
   .solutions-3 {
-    height: 437px;
     background-color: #fff;
   }
   .solutions-4 {
-    height: 437px;
     background-color: #f9f9f9;
   }
   .solutions-5 {
-    height: 437px;
     background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .solutions .banner {
+    height: 340px;
+  }
+  .solutions .banner h2 {
+    width: 100%;
+    font-size: 24px;
+  }
+  .solutions .solution-flex {
+    display: none;
+  }
+  .solutions .solution-m {
+    display: block;
   }
 }
 </style>

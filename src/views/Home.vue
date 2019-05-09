@@ -266,7 +266,6 @@ export default {
 <style lang="less">
 @import "../css/animate";
 .home {
-  min-width: 1200px;
   .banner-swiper {
     position: relative;
     .slide-img {
@@ -291,7 +290,7 @@ export default {
       background: #2fccf6;
     }
     .banner-btn {
-      width: 1200px;
+      max-width: 1200px;
       position: absolute;
       bottom: 90px;
       left: 50%;
@@ -328,7 +327,7 @@ export default {
       margin-bottom: 50px;
     }
     .con {
-      width: 1200px;
+      max-width: 1200px;
       height: 288px;
       position: relative;
       margin: 0 auto 50px auto;
@@ -375,7 +374,7 @@ export default {
       color: #fff;
     }
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       position: relative;
       .light {
@@ -498,7 +497,7 @@ export default {
       margin-bottom: 50px;
     }
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       ul {
         display: flex;
@@ -523,7 +522,7 @@ export default {
       margin-bottom: 0;
     }
     .event {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       .event-c {
         padding-top: 80px;
@@ -579,14 +578,14 @@ export default {
       position: relative;
     }
     .more {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       text-align: right;
       padding-top: 20px;
       font-size: 20px;
     }
     .news {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto 50px auto;
       .news-t {
         height: 40px;

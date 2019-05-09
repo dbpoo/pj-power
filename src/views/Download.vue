@@ -51,7 +51,6 @@ export default {
 
 <style lang="less" scoped>
 .download-wrapper {
-  min-width: 1200px;
   .banner {
     height: 473px;
     padding-top: 77px;
@@ -85,7 +84,7 @@ export default {
     background: url("../assets/downloadbg_1.jpg") center 0 no-repeat;
     padding-top: 100px;
     .con {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       p {
         text-indent: 3rem;
@@ -104,7 +103,7 @@ export default {
       color: #fff;
     }
     .type {
-      width: 1200px;
+      max-width: 1200px;
       margin: 0 auto;
       position: relative;
       .client {
