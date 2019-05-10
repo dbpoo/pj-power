@@ -1,13 +1,20 @@
 <template>
   <div class="home">
     <div class="banner-swiper">
-      <swiper :options="swiperOption" ref="bannerSwiper" v-if="bannerSlides.length > 0">
+      <swiper
+        :options="swiperOption"
+        ref="bannerSwiper"
+        v-if="bannerSlides.length > 0"
+      >
         <!-- slides -->
         <swiper-slide v-for="(slide, index) in bannerSlides" :key="index">
-          <div :style="{ backgroundImage: 'url(' + slide.img + ')' }" class="slide-img">
+          <div
+            :style="{ backgroundImage: 'url(' + slide.img + ')' }"
+            class="slide-img"
+          >
             <div class="slide-info">
-              <h2>{{slide.txt1}}</h2>
-              <h2>{{slide.txt2}}</h2>
+              <h2>{{ slide.txt1 }}</h2>
+              <h2>{{ slide.txt2 }}</h2>
             </div>
           </div>
         </swiper-slide>
@@ -67,11 +74,15 @@
                         : 'http://www.xinnengboan.com/assets/img/default.jpg'
                     "
                     alt
-                  >
+                  />
                 </a>
               </li>
               <li class="li2">
-                <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
+                <a
+                  href="javascript:;"
+                  @click="toDetail(newTop.id)"
+                  v-html="newTop.tit"
+                ></a>
               </li>
             </ul>
           </div>
@@ -83,7 +94,11 @@
               </dl>
               <ul>
                 <li class="li1">
-                  <a href="javascript:;" @click="toDetail(item.id)" v-html="item.title.rendered"></a>
+                  <a
+                    href="javascript:;"
+                    @click="toDetail(item.id)"
+                    v-html="item.title.rendered"
+                  ></a>
                 </li>
                 <li class="li2" v-html="item.excerpt.rendered"></li>
               </ul>
@@ -120,15 +135,15 @@
           <i>项目展示</i>
         </span>
       </div>
-      <div class="con" :class="isHide ? 'conhide': ''">
+      <div class="con" :class="isHide ? 'conhide' : ''">
         <ul>
           <li
             v-for="(item, index) in cardList"
             :key="index"
             class="hvr-grow"
-            :class="'hvr-grow'+index"
+            :class="'hvr-grow' + index"
           >
-            <img :src="item.img" alt srcset>
+            <img :src="item.img" alt srcset />
           </li>
         </ul>
       </div>
@@ -149,7 +164,7 @@
             <swiper-slide v-for="(slide, index) in eventSlides" :key="index">
               <ul>
                 <li class="li1">
-                  <img :src="slide.img" alt>
+                  <img :src="slide.img" alt />
                 </li>
               </ul>
             </swiper-slide>
@@ -325,7 +340,7 @@ export default {
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
-      background-size: 100% 900px; 
+      background-size: 100% 900px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -946,8 +961,8 @@ export default {
         }
       }
       .light-150 {
-        top: 230px;
-        left: 180px;
+        top: 280px;
+        left: 190px;
         span.sp2 {
           width: 200px;
           height: 120px;
@@ -957,8 +972,8 @@ export default {
         }
       }
       .light-75 {
-        top: 260px;
-        left: 210px;
+        top: 220px;
+        left: 140px;
         span.sp2 {
           width: 200px;
           height: 123px;
@@ -970,7 +985,7 @@ export default {
       }
       .light-120 {
         top: 280px;
-        left: 150px;
+        left: 280px;
         span.sp2 {
           width: 200px;
           height: 119px;
@@ -1051,6 +1066,11 @@ export default {
     100% {
       background-position: 0 -10px;
     }
+  }
+  .hvr-grow:hover,
+  .hvr-grow:focus,
+  .hvr-grow:active {
+    transform: none;
   }
 }
 </style>
