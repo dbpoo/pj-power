@@ -4,14 +4,12 @@
       <swiper
         :options="swiperOption"
         ref="bannerSwiper"
-        v-if="bannerSlides.length > 0"
+        class="bannerSwiper"
+        v-if="bannerSlides.length > 0 && screenWidth > 768"
       >
         <!-- slides -->
         <swiper-slide v-for="(slide, index) in bannerSlides" :key="index">
-          <div
-            :style="{ backgroundImage: 'url(' + slide.img + ')' }"
-            class="slide-img"
-          >
+          <div :style="{ backgroundImage: 'url(' + slide.img + ')' }" class="slide-img">
             <div class="slide-info">
               <h2>{{ slide.txt1 }}</h2>
               <h2>{{ slide.txt2 }}</h2>
@@ -20,6 +18,24 @@
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+      <swiper
+        :options="swiperOptionM"
+        ref="bannerSwiperM"
+        class="bannerSwiperM"
+        v-if="bannerMobileSlides.length > 0 && screenWidth < 768"
+      >
+        <!-- slides -->
+        <swiper-slide v-for="(slide, index) in bannerMobileSlides" :key="index">
+          <div :style="{ backgroundImage: 'url(' + slide.img + ')' }" class="slide-img">
+            <div class="slide-info">
+              <h2>{{ slide.txt1 }}</h2>
+              <h2>{{ slide.txt2 }}</h2>
+            </div>
+          </div>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <div class="swiper-pagination swiper-pagination-m" slot="pagination"></div>
       </swiper>
       <div class="banner-btn">
         <a href="javascript:;" class="btn-1 hvr-grow"></a>
@@ -74,15 +90,11 @@
                         : 'http://www.xinnengboan.com/assets/img/default.jpg'
                     "
                     alt
-                  />
+                  >
                 </a>
               </li>
               <li class="li2">
-                <a
-                  href="javascript:;"
-                  @click="toDetail(newTop.id)"
-                  v-html="newTop.tit"
-                ></a>
+                <a href="javascript:;" @click="toDetail(newTop.id)" v-html="newTop.tit"></a>
               </li>
             </ul>
           </div>
@@ -94,11 +106,7 @@
               </dl>
               <ul>
                 <li class="li1">
-                  <a
-                    href="javascript:;"
-                    @click="toDetail(item.id)"
-                    v-html="item.title.rendered"
-                  ></a>
+                  <a href="javascript:;" @click="toDetail(item.id)" v-html="item.title.rendered"></a>
                 </li>
                 <li class="li2" v-html="item.excerpt.rendered"></li>
               </ul>
@@ -143,7 +151,7 @@
             class="hvr-grow"
             :class="'hvr-grow' + index"
           >
-            <img :src="item.img" alt srcset />
+            <img :src="item.img" alt srcset>
           </li>
         </ul>
       </div>
@@ -164,7 +172,7 @@
             <swiper-slide v-for="(slide, index) in eventSlides" :key="index">
               <ul>
                 <li class="li1">
-                  <img :src="slide.img" alt />
+                  <img :src="slide.img" alt>
                 </li>
               </ul>
             </swiper-slide>
@@ -190,6 +198,7 @@ export default {
       curIndex: _.random(0, 4),
       lightArr: [100, 60, 150, 75, 120],
       newList: [],
+      screenWidth: document.body.clientWidth,
       newTop: {
         id: "",
         tit: "",
@@ -247,11 +256,30 @@ export default {
           txt2: "系统解决方案提供商"
         }
       ],
+      bannerMobileSlides: [
+        {
+          img: require("../assets/banner_1m.jpg"),
+          txt1: "促进全球新能源数权治理",
+          txt2: "推动新能源数权经济发展"
+        },
+        {
+          img: require("../assets/banner_2m.jpg"),
+          txt1: "新能源资产上链、发行、清结算",
+          txt2: "系统解决方案提供商"
+        }
+      ],
       swiperOption: {
         autoplay: true,
         loop: true,
         pagination: {
           el: ".swiper-pagination"
+        }
+      },
+      swiperOptionM: {
+        autoplay: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination-m"
         }
       },
       swiperEventOption: {
@@ -333,6 +361,12 @@ export default {
 .home {
   .banner-swiper {
     position: relative;
+    .bannerSwiper {
+      display: block;
+    }
+    .bannerSwiperM {
+      display: none;
+    }
     .slide-img {
       width: 100%;
       height: 900px;
@@ -340,7 +374,7 @@ export default {
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
-      background-size: 100% 900px;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -788,9 +822,16 @@ export default {
 }
 
 @media screen and (max-width: 640px) {
+  .home .banner-swiper {
+    .bannerSwiper {
+      display: none;
+    }
+    .bannerSwiperM {
+      display: block;
+    }
+  }
   .home .banner-swiper .slide-img {
     height: 600px;
-    background-size: 100% 600px;
   }
   .home .banner-swiper .banner-btn {
     display: none;

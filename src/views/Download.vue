@@ -32,11 +32,11 @@
       </div>
       <div class="type">
         <div class="client">
-          <a href="javascript:;" class="icon-ios">
+          <a href="javascript:;" class="icon-ios" @click="gohome">
             iPhone访问
             <span></span>
           </a>
-          <a href="javascript:;" class="icon-android">
+          <a href="javascript:;" class="icon-android"  @click="gohome">
             Android访问
             <span></span>
           </a>
@@ -54,7 +54,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      screenWidth: document.body.clientWidth,
+    }
+  },
   methods: {
+    gohome() {
+      if (this.screenWidth < 768 ) {
+        this.$router.push({ name: 'home' });
+      }
+    },
     toast() {
       alert("暂未开放，敬请期待！");
     }
@@ -143,6 +153,7 @@ export default {
             margin: -20px 0 0 -10px;
             background: url("../assets/download_qr.jpg") center 0 no-repeat;
             display: none;
+            z-index: 99;
           }
           &:hover {
             span {
@@ -152,6 +163,7 @@ export default {
         }
         a.icon-android {
           background: url("../assets/icon_android.png") 0 center no-repeat;
+          z-index: 1;
           span {
             width: 249px;
             height: 211px;
@@ -161,6 +173,7 @@ export default {
             margin: -20px 0 0 -10px;
             background: url("../assets/download_qr.jpg") center 0 no-repeat;
             display: none;
+            z-index: 99;
           }
           &:hover {
             span {
@@ -207,7 +220,7 @@ export default {
     }
   }
   .download-wrapper .download-2 {
-    height: 550px;
+    height: 420px;
     background: url("../assets/downloadbg_m.jpg") center 0 no-repeat;
     background-size: cover;
     padding-top: 30px;
@@ -226,15 +239,22 @@ export default {
         }
         a.icon-ios {
           background-size: 40px 40px;
+          &:hover {
+            span {
+              display: none;
+            }
+          }
         }
         a.icon-android {
           background-size: 40px 40px;
+          &:hover {
+            span {
+              display: none;
+            }
+          }
         }
-        a.icon-window {
-          background-size: 40px 40px;
-        }
-        a.icon-macos {
-          background-size: 40px 40px;
+        a.icon-window, a.icon-macos {
+          display: none;
         }
       }
     }

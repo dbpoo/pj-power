@@ -62,6 +62,9 @@
         </ul>
       </div>
     </div>
+    <div class="school-2m">
+      <img src="../assets/school2m.jpg" alt="">
+    </div>
     <div class="school-3">
       <div class="tit">
         <span>
@@ -271,6 +274,12 @@ export default {
       }
     }
   }
+  .school-2m {
+    display: none;
+    img {
+      width: 100%;
+    }
+  }
   .school-3 {
     height: 856px;
     padding-top: 45px;
@@ -453,33 +462,10 @@ export default {
       }
     }
     .school-2 {
-      height: auto;
-      padding: 20px 10px 20px 10px;
-      .tit {
-        margin-bottom: 20px;
-      }
-      .con {
-        ul {
-          height: auto;
-          padding-bottom: 10px;
-          margin: 0 5px;
-          li.li1 {
-            padding-top: 100px;
-            font-size: 20px;
-          }
-          li.li2 {
-            font-size: 12px;
-          }
-        }
-        ul.ul1,
-        ul.ul2,
-        ul.ul3,
-        ul.ul4,
-        ul.ul5,
-        ul.ul6 {
-          background-size: 80px 69px;
-        }
-      }
+      display: none;
+    }
+    .school-2m {
+      display: block;
     }
     .school-3 {
       height: auto;
@@ -514,6 +500,12 @@ export default {
             }
           }
         }
+        ul.ul3,
+        ul.ul4 {
+          li.li1 b{
+            width: 100px;
+          }
+        }
         ul.ul1,
         ul.ul4 {
           background-color: #fafafa;
@@ -527,7 +519,7 @@ export default {
         margin-bottom: 20px;
       }
       .con {
-        font-size: 18px;
+        font-size: 14px;
       }
       .school-swiper {
         padding: 20px;
