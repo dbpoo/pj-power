@@ -143,15 +143,19 @@ export default {
     return {
       eventSlides: [
         {
-          img: require("../assets/schoolslider.jpg"),
+          img: require("../assets/schoolslider_1.jpg"),
           href: "/"
         },
         {
-          img: require("../assets/schoolslider.jpg"),
+          img: require("../assets/schoolslider_2.jpg"),
           href: "/"
         },
         {
-          img: require("../assets/schoolslider.jpg"),
+          img: require("../assets/schoolslider_3.jpg"),
+          href: "/"
+        },
+        {
+          img: require("../assets/schoolslider_4.jpg"),
           href: "/"
         }
       ],
@@ -162,9 +166,9 @@ export default {
         centeredSlides: true,
         slidesPerView: "auto",
         coverflowEffect: {
-          rotate: 50,
+          rotate: 0,
           stretch: 0,
-          depth: 300,
+          depth: 400,
           modifier: 1,
           slideShadows: true
         },
@@ -367,11 +371,12 @@ export default {
     padding-top: 60px;
     background: url("../assets/schoolbg_3.jpg") center 0 no-repeat;
     .con {
-      max-width: 1200px;
+      max-width: 1050px;
       margin: 0 auto;
       font-size: 24px;
       color: #747474;
       line-height: 1.6;
+      text-align: center;
     }
     .school-swiper {
       max-width: 1200px;

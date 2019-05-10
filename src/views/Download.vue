@@ -3,7 +3,7 @@
     <div class="banner">
       <h2>
         新能源资产上链、发行、清结算
-        <br>系统解决方案提供商
+        <br />系统解决方案提供商
       </h2>
       <div class="download-btn">
         <a href="javascript:;" @click="toast"></a>
@@ -16,8 +16,12 @@
         </span>
       </div>
       <div class="con">
-        <p>“新能源资产上链发行清结算平台”是由国研智库、清华X-lab、新能区块链共同发起，联合新能源头部企业、新能源行业协会、司法鉴定机构、金融保险机构、区块链技术公司、交易所等多方共建“新能源资产上链发行清结算平台”，旨在响应国家数字经济战略，在数字治理、数字产业、数字金融三个方向共同推动新能源产业数字化、规范化、健康化发展。</p>
-        <p>“新能源资产上链发行清结算平台”是将新能源产业与区块链技术相结合，以新能源产业的区块链技术应用为驱动，结合数字经济国家战略大趋势，实现科技、产业、金融协同发展，助力新能源领域产业数字化、数字产业化。</p>
+        <p>
+          “新能源资产上链发行清结算平台”是由国研智库、清华X-lab、新能区块链共同发起，联合新能源头部企业、新能源行业协会、司法鉴定机构、金融保险机构、区块链技术公司、交易所等多方共建“新能源资产上链发行清结算平台”，旨在响应国家数字经济战略，在数字治理、数字产业、数字金融三个方向共同推动新能源产业数字化、规范化、健康化发展。
+        </p>
+        <p>
+          “新能源资产上链发行清结算平台”是将新能源产业与区块链技术相结合，以新能源产业的区块链技术应用为驱动，结合数字经济国家战略大趋势，实现科技、产业、金融协同发展，助力新能源领域产业数字化、数字产业化。
+        </p>
       </div>
     </div>
     <div class="download-2">
@@ -36,8 +40,12 @@
             Android访问
             <span></span>
           </a>
-          <a href="javascript:;" class="icon-window" @click="toast">Windows访问</a>
-          <a href="javascript:;" class="icon-macos" @click="toast">Mac OS访问</a>
+          <a href="javascript:;" class="icon-window" @click="toast"
+            >Windows访问</a
+          >
+          <a href="javascript:;" class="icon-macos" @click="toast"
+            >Mac OS访问</a
+          >
         </div>
       </div>
     </div>
@@ -127,12 +135,12 @@ export default {
         a.icon-ios {
           background: url("../assets/icon_iphone.png") 0 center no-repeat;
           span {
-            width: 240px;
-            height: 240px;
+            width: 249px;
+            height: 211px;
             position: absolute;
             top: -50%;
             left: 0;
-            margin: -40px 0 0 -10px;
+            margin: -20px 0 0 -10px;
             background: url("../assets/download_qr.jpg") center 0 no-repeat;
             display: none;
           }
@@ -145,12 +153,12 @@ export default {
         a.icon-android {
           background: url("../assets/icon_android.png") 0 center no-repeat;
           span {
-            width: 240px;
-            height: 240px;
+            width: 249px;
+            height: 211px;
             position: absolute;
             top: -50%;
             left: 0;
-            margin: -40px 0 0 -10px;
+            margin: -20px 0 0 -10px;
             background: url("../assets/download_qr.jpg") center 0 no-repeat;
             display: none;
           }
