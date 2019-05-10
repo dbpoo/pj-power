@@ -33,7 +33,7 @@
       <div class="type">
         <div class="client">
           <a href="javascript:;" class="icon-ios">
-            iphone访问
+            iPhone访问
             <span></span>
           </a>
           <a href="javascript:;" class="icon-android">
@@ -199,10 +199,10 @@ export default {
       margin-bottom: 20px;
     }
     .con {
-      padding: 0 30px;
+      padding: 0 30px 30px 30px;
       p {
-        font-size: 18px;
-        text-indent: 2rem;
+        font-size: 14px;
+        text-indent: 28px;
       }
     }
   }

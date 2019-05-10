@@ -448,7 +448,8 @@ export default {
       }
       .con {
         padding: 0 20px;
-        font-size: 18px;
+        font-size: 14px;
+        text-indent: 28px;
       }
     }
     .school-2 {

@@ -228,7 +228,7 @@ export default {
         },
         {
           img: require("../assets/banner_2.jpg"),
-          txt1: "新能源资产上链、发行",
+          txt1: "新能源资产上链、发行、清结算",
           txt2: "系统解决方案提供商"
         }
       ],
@@ -325,7 +325,7 @@ export default {
       display: block;
       background-position: center 0;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 900px; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -773,13 +773,17 @@ export default {
 }
 
 @media screen and (max-width: 640px) {
+  .home .banner-swiper .slide-img {
+    height: 600px;
+    background-size: 100% 600px;
+  }
   .home .banner-swiper .banner-btn {
     display: none;
   }
   .home .banner-swiper .banner-btn-m {
     width: 100%;
     margin-left: 0;
-    bottom: 80px;
+    bottom: 40px;
     left: 0;
     display: block;
 
@@ -885,6 +889,7 @@ export default {
               }
             }
             ul {
+              margin-bottom: 0;
               li.li1 {
                 margin-bottom: 5px;
                 font-size: 18px;
