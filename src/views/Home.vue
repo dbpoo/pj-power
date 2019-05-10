@@ -64,6 +64,9 @@
         <div class="point point-3"></div>
         <div class="point point-4"></div>
       </div>
+      <div class="conm">
+        <img src="../assets/con_1m.png" alt="">
+      </div>
       <div class="btn">
         <router-link to="/solutions"></router-link>
       </div>
@@ -456,6 +459,12 @@ export default {
         background-image: url("../assets/point.png");
         background-repeat: no-repeat;
         animation: point 1s steps(1) 0s infinite both;
+      }
+    }
+    .conm {
+      display: none;
+      img {
+        width: 100%;
       }
     }
     .btn {
@@ -863,15 +872,11 @@ export default {
       margin-bottom: 20px;
     }
     .con {
-      height: 100px;
-      background-size: contain;
-      padding: 50px 20px 0 20px;
-      margin-bottom: 30px;
-      .point {
-        width: 29px;
-        height: 2px;
-        background-size: 29px 12px;
-      }
+      display: none;
+    }
+    .conm {
+      display: block;
+      padding: 0 20px 40px 20px;
     }
     .btn {
       a {
