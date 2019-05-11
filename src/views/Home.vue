@@ -514,6 +514,7 @@ export default {
           top: -50px;
           z-index: 99;
           background: url("../assets/map_100.png") 0 0 no-repeat;
+          z-index: 99;
         }
         span.on {
           animation: zoomIn 0.2s;
@@ -531,6 +532,7 @@ export default {
           right: 50px;
           top: -50px;
           background: url("../assets/map_60.png") 0 0 no-repeat;
+          z-index: 99;
         }
         span.on {
           animation: zoomIn 0.2s;
@@ -548,6 +550,7 @@ export default {
           right: 50px;
           bottom: 50px;
           background: url("../assets/map_150.png") 0 0 no-repeat;
+          z-index: 99;
         }
         span.on {
           animation: zoomIn 0.2s;
@@ -565,6 +568,7 @@ export default {
           left: 50px;
           bottom: 50px;
           background: url("../assets/map_75.png") 0 0 no-repeat;
+          z-index: 99;
         }
         span.on {
           animation: zoomIn 0.2s;
@@ -582,6 +586,7 @@ export default {
           right: 50px;
           bottom: 50px;
           background: url("../assets/map_120.png") 0 0 no-repeat;
+          z-index: 99;
         }
         span.on {
           animation: zoomIn 0.2s;
@@ -865,6 +870,11 @@ export default {
     font-size: 12px;
     letter-spacing: 8px;
   }
+  .home .banner-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+  }
   .home .col-1 {
     height: auto;
     padding: 20px 20px 40px 20px;
@@ -1019,7 +1029,7 @@ export default {
       }
       .light-75 {
         top: 220px;
-        left: 140px;
+        left: 52px;
         span.sp2 {
           width: 200px;
           height: 123px;
@@ -1045,6 +1055,7 @@ export default {
   .home .col-3 {
     height: auto;
     padding: 20px 10px 40px 10px;
+    background-size: cover;
     .tit {
       margin-bottom: 20px;
     }
